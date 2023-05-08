@@ -2,20 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/css/derasat.css">
-    <link rel="stylesheet" href="/css/agents.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="css/derasat.css">
     <title>FrontEnd BootCamp</title>
 </head>
 
@@ -23,21 +10,16 @@
 
 
     <div class="box mt-5">
-         <h3 class="welcomeText me-3">القسم الخاص بالوكلات</h3>
+         <h3 class="welcomeText me-3">قسم الإستشارات</h3>
 
          <div class="row mt-3 px-5">
             <div class="col-3">
-                <h4>عدد الوكلات</h4>
-                <span class="badge rounded-pill">3 وكالات</span>
+                <h4>عدد الإستشارات</h4>
+                <span class="badge rounded-pill">2 إستشارات</span>
             </div>
-            <div class="col-4 derasaSearch">
-                <form action="" class="inline">
-                    <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
-                    <input type="text" class=" form-control" placeholder="البحث برقم الوكالة">
-                </form>
-            </div>
+            
             <div class="col-5">
-                <button id="addAgent" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة وكالة جديدة</button>
+                <button id="addNewConstulting" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة إستشارة جديدة</button>
             </div> 
          </div>
 
@@ -45,19 +27,15 @@
             <table class="table table-bordered text-center">
                 <thead>
                   <tr>
-                    <th>رقم التوكيل</th>
-                    <th>نوع القضية </th>
-                    <th>اسم العميل</th>
-                    <th>الحالة</th>
+                    <th>رقم الإستشارة</th>
+                    <th>الإستشارات</th>
                     <th>تعديل البيانات</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>جنائية</td>
-                    <td>أحمد سمير</td>
-                    <td> <img src="/assets/vectors/abortIcon.png" alt="abort"> قيد العمل</td>
+                    <td>هنا كلام عن الإستشارة</td>
                     <td class="text-center">  
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                         <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
@@ -66,9 +44,7 @@
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>جنائية</td>
-                    <td>مها القحطاني</td>
-                    <td><img src="/assets/vectors/done.png" alt="doneIcon"> إنتهت</td>
+                    <td>محمد حسن</td>
                     <td class="text-center">  
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                         <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
@@ -76,9 +52,7 @@
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>جنائية</td>
-                    <td>مها القحطاني</td>
-                    <td> <img src="/assets/vectors/abortIcon.png" alt="abort"> قيد العمل</td>
+                    <td>محمد حسن</td>
                     <td class="text-center">  
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                         <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
@@ -86,9 +60,7 @@
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td>جنائية</td>
-                    <td>محمد حسن</td>
-                    <td><img src="/assets/vectors/done.png" alt="doneIcon"> إنتهت</td>
+                    <td>أحمد سمير</td>
                     <td class="text-center">  
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                         <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
@@ -96,9 +68,7 @@
                   </tr>
                   <tr>
                     <td>5</td>
-                    <td>جنائية</td>
-                    <td>محمد حسن</td>
-                    <td> <img src="/assets/vectors/abortIcon.png" alt="abort"> قيد العمل</td>
+                    <td>أحمد سمير</td>
                     <td class="text-center">  
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                         <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
@@ -106,9 +76,7 @@
                   </tr>
                   <tr>
                     <td>6</td>
-                    <td>جنائية</td>
-                    <td>مها القحطاني</td>
-                    <td><img style="left: 0;" src="/assets/vectors/done.png" alt="doneIcon"> إنتهت</td>
+                    <td>محمد حسن</td>
                     <td class="text-center">  
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                         <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
@@ -123,15 +91,11 @@
 
 
     <script>
-        $('#addAgent').click(function(){
-      $("#mainContent").load('/subpages/addAgent.html')
+        $('#addNewConstulting').click(function(){
+      $("#mainContent").load('/subpages/WorkManagementTab/addNewConsulting.html')
     });
        </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-       
-    <script src="/js/agents.js"></script>
+   
 
 </body>
 

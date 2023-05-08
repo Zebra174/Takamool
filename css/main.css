@@ -162,7 +162,7 @@ width: 100%;
 
 }
 
-.form-control{
+.searchForm input{
 
 font-family: 'Cairo';
 font-style: normal;
@@ -174,7 +174,7 @@ border-radius: 8px;
 width: 90%;
 }
 
-form a {
+.searchForm a {
   position: absolute;
   margin-right: 56%;
 }

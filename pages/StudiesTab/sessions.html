@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/derasat.css">
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+
+
+    <div class="box mt-5">
+         <h3 class="welcomeText me-3">القسم الخاص بالجلسات</h3>
+
+         <div class="row mt-3 px-5">
+            <div class="col-3">
+                <h4>عدد الجلسات</h4>
+                <span class="badge rounded-pill">3 جلسات</span>
+            </div>
+            <div class="col-4 derasaSearch">
+                <form action="" class="inline">
+                    <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
+                    <input type="text" class=" form-control" placeholder="البحث برقم الجلسة">
+                </form>
+            </div>
+            <div class="col-5">
+                <button id="addSession" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة جلسة جديدة</button>
+            </div> 
+         </div>
+
+         <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th>رقم الجلسة</th>
+                    <th>وصف الجلسة</th>
+                    <th>نوع القضية</th>
+                    <th>تعديل البيانات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>كلام يوصف الجلسة</td>
+                    <td>جنائية</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                   
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>كلام يوصف الجلسة</td>
+                    <td>جنائية</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>كلام يوصف الجلسة</td>
+                    <td>جنائية</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>كلام يوصف الجلسة</td>
+                    <td>جنائية</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>كلام يوصف الجلسة</td>
+                    <td>جنائية</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>كلام يوصف الجلسة</td>
+                    <td>جنائية</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+         </div>
+    </div>
+
+
+
+
+    <script>
+        $('#addSession').click(function(){
+      $("#mainContent").load('/subpages/StudiesTab/addSession.html')
+    });
+       </script>
+</body>
+
+</html>

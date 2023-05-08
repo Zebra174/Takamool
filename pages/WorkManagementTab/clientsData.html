@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/derasat.css">
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+
+
+    <div class="box mt-5">
+         <h3 class="welcomeText me-3">قائمة بيانات العملاء</h3>
+
+         <div class="row mt-3 px-5">
+            <div class="col-3">
+                <h4>عدد العملاء </h4>
+                <span class="badge rounded-pill">5 عملاء</span>
+            </div>
+            <div class="col-4 derasaSearch">
+                <form action="" class="inline">
+                    <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
+                    <input type="text" class=" form-control" placeholder="البحث برقم العميل/الهوية">
+                </form>
+            </div>
+            <div class="col-5">
+                <button id="addNewClient" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة عميل جديد</button>
+            </div> 
+         </div>
+
+         <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th>رقم العميل</th>
+                    <th>اسم العميل</th>
+                    <th>هوية العميل</th>
+                    <th>تعديل البيانات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>أحمد سمير</td>
+                    <td>123455646565665</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                   
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>محمد حسن</td>
+                    <td>123455646565665</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>محمد حسن</td>
+                    <td>123455646565665</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>أحمد سمير</td>
+                    <td>123455646565665</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>أحمد سمير</td>
+                    <td>123455646565665</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>محمد حسن</td>
+                    <td>123455646565665</td>
+                    <td class="text-center">  
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+         </div>
+    </div>
+
+
+
+
+    <script>
+        $('#addNewClient').click(function(){
+      $("#mainContent").load('/pages/WorkManagementTab/addClientData.html')
+    });
+       </script>
+   
+
+</body>
+
+</html>

@@ -6,47 +6,13 @@ body {
 
 
 /* Search bar */
-.searchForm{
-    display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
-  
-  gap: 8px;
-  width: 100%;
-  /* Gray/F5 */
-  
-  }
-  
-  .form-control{
-  
-  font-family: 'Cairo';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 45px;
-  border-radius: 8px;
-  width: 90%;
-  }
-  
-  form a {
-    position: absolute;
-    margin-right: 56%;
-  }
-  
-  
-  
-  .Notification {
-    background-color: #D3AC67;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+.searchForm input{
     
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 2%;
+    background-color: white;
+  
   }
+  
+
 
   
 

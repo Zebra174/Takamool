@@ -52,14 +52,14 @@
                 <div id="demo1" class="collapse">
                     <div class="list-group">
                         <li class="list-group-item"> 
-                             <a class="listA" href="#">إضافة بيانات عميل <img src="assets/vectors/logout.png" alt="logout"> </a>
+                             <a class="listA" id="addClientData" href="#">إضافة بيانات عميل <img src="assets/vectors/logout.png" alt="logout"> </a>
                         </li>
                         
                         <li class="list-group-item">
-                            <a class="listA" href="#">بيانات العملاء <img src="assets/vectors/logout.png" alt="logout"> </a>
+                            <a class="listA" id="clientsData" href="#">بيانات العملاء <img src="assets/vectors/logout.png" alt="logout"> </a>
                         </li>
                         <li class="list-group-item">
-                            <a class="listA" href="#">عروض الأسعار لعميل <img src="assets/vectors/logout.png" alt="logout"></a>
+                            <a class="listA" id="consulting" href="#">عروض الأسعار لعميل <img src="assets/vectors/logout.png" alt="logout"></a>
                         </li>
                         <li class="list-group-item">
                             <a class="listA" href="#">دفعات العميل <img src="assets/vectors/logout.png" alt="logout"> </a>
@@ -226,27 +226,47 @@
   
    <script>
     $('#derasatPage').click(function(){
-  $("#mainContent").load('/pages/derasat.html')
+  $("#mainContent").load('/pages/StudiesTab/derasat.html')
 });
    </script>
 
 <script>
     $('#khadmatPage').click(function(){
-  $("#mainContent").load('/pages/khadmatKanonyia.html')
+  $("#mainContent").load('/pages/StudiesTab/khadmatKanonyia.html')
 });
    </script>
 
 <script>
     $('#agentsPage').click(function(){
-  $("#mainContent").load('/pages/agents.html')
+  $("#mainContent").load('/pages/StudiesTab/agents.html')
 });
    </script>
 
    <script>
     $('#sessionPage').click(function(){
-  $("#mainContent").load('/pages/sessions.html')
+  $("#mainContent").load('/pages/StudiesTab/sessions.html')
 });
    </script>
+
+<script>
+    $('#addClientData').click(function(){
+  $("#mainContent").load('/pages/WorkManagementTab/addClientData.html')
+});
+   </script>
+
+<script>
+    $('#clientsData').click(function(){
+  $("#mainContent").load('/pages/WorkManagementTab/clientsData.html')
+});
+   </script>
+
+<script>
+    $('#consulting').click(function(){
+  $("#mainContent").load('/pages/WorkManagementTab/consulting.html')
+});
+   </script>
+
+
 
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
