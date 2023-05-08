@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <title>FrontEnd BootCamp</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="container-fluid d-flex">
+    <div class="container col-4">
+        <div class="sidebar">
+            <img class="img-fluid py-4" id="logo" src="assets/images/logo.png" alt="logo">
+           
+            <div class="home">
+                <img class="img-fluid" src="assets/vectors/HomeVector.png" alt="HomeIcon">
+                <a  href="/index.html"  class="mt-2 me-2"> الصفحة الرئيسية</a>
+            </div>
+            
+            <div class="btn-group-vertical">
+                <button  class="btn mt-5" data-bs-toggle="collapse" data-bs-target="#demo">القضايا <img class="downArrow" src="assets/vectors/downarrow.png" alt="downarrow"></button>
+                    <div id="demo" class="collapse">
+                            <div class="list-group">
+                                <li class="list-group-item"> 
+                                     <a class="listA" id="derasatPage" type="button">الدراسات <img src="assets/vectors/logout.png" alt="logout"></a>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <a class="listA"  id="khadmatPage" href="#">الخدمات القانونية <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="listA" id="agentsPage" href="#">الوكلاء <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a class="listA" id="sessionPage" href="#">الجلسات <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                </li>
+                               
+                            </div>
+                        </div>
+            
+                <button class="btn mt-4" data-bs-toggle="collapse" data-bs-target="#demo1">إدارة العمل <img class="downArrow" src="assets/vectors/downarrow.png" alt="downarrow"></button>
+                <div id="demo1" class="collapse">
+                    <div class="list-group">
+                        <li class="list-group-item"> 
+                             <a class="listA" href="#">إضافة بيانات عميل <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                        
+                        <li class="list-group-item">
+                            <a class="listA" href="#">بيانات العملاء <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="listA" href="#">عروض الأسعار لعميل <img src="assets/vectors/logout.png" alt="logout"></a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="listA" href="#">دفعات العميل <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                       
+                    </div>
+                </div>
+                
+                <button class="btn mt-4" data-bs-toggle="collapse" data-bs-target="#demo2">إدارة المهام <img class="downArrow" src="assets/vectors/downarrow.png" alt="downarrow"></button>
+                <div id="demo2" class="collapse">
+                    <div class="list-group">
+                        <li class="list-group-item"> 
+                             <a class="listA" href="#">إدارة المهام <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                        
+                        <li class="list-group-item">
+                            <a class="listA" href="#">إضافة مهمة <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="listA" href="#">داش المهام <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                    </div>
+                </div>
+                
+                <button class="btn mt-4" data-bs-toggle="collapse" data-bs-target="#demo3">الإعدادات <img class="downArrow" src="assets/vectors/downarrow.png" alt="downarrow"></button>
+                <div id="demo3" class="collapse">
+                    <div class="list-group">
+                        <li class="list-group-item"> 
+                             <a class="listA" href="#">إضافة متسخدم <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                        
+                        <li class="list-group-item">
+                            <a class="listA" href="#">صلاحيات المستخدمين <img src="assets/vectors/logout.png" alt="logout"> </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="listA" href="#">ملفات التعريف <img src="assets/vectors/logout.png" alt="logout"></a>
+                        </li>
+                    </div>
+                </div>
+                    <button class="btn mt-4" data-bs-toggle="collapse" data-bs-target="#demo4">استعلامات وتقراير <img class="downArrow" src="assets/vectors/downarrow.png" alt="downarrow"> </button>
+                    <div id="demo4" class="collapse">
+                        <div class="list-group">
+                            <li class="list-group-item"> 
+                                 <a class="listA" href="#">تقارير المالية <img src="assets/vectors/logout.png" alt="logout"> </a>
+                            </li>
+                            
+                            <li class="list-group-item">
+                                <a class="listA" href="#">تقارير العملاء <img src="assets/vectors/logout.png" alt="logout"> </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="listA" href="#">تقارير القضايا <img src="assets/vectors/logout.png" alt="logout"> </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="listA" href="#">تقارير الموظفين <img src="assets/vectors/logout.png" alt="logout"> </a>
+                            </li>
+                           
+                        </div>
+                    </div>
+            </div>
+             
+            <div class="logout">
+                <img class="img-fluid mt-2" src="assets/vectors/outbtn.png" alt="HomeIcon">
+                <a href="#logout" class="mt-2"> تسجيل الخروج</a>
+            </div>
+    
+          </div>
+            <!-- End Of Navbar -->
+    </div>
+
+
+   <!-- Search Bar & Notification -->
+     <div class=" col-8">
+        <div class="row d-flex">
+            
+                <form class="searchForm mt-5">
+                    <input class="form-control" type="text" placeholder="البحث عن">  
+                    <a href="#"><img src="assets/vectors/search.png" alt="search"></a>
+                    <button href="#" class="Notification btn"><img src="assets/vectors/notification.png" alt="notification"></button>
+                </form>
+          
+
+           <div id="mainContent">
+            <div class="container mt-5">
+                <h1 class="welcomeText">اهلا بحضرتك تلك الطلبات الجديدة</h1>
+            </div>
+            
+        
+            <div class="row ms-5 mt-5">
+
+                <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body">
+                          <img src="assets/vectors/card3.png" alt="card" style="width: 80px; height: 80px;" >
+                        <h5 class="card-title">7 طلبات جديدة </h5>
+                        <p class="card-text">خدمات قانونية</p>
+                        <a href="#" class="btn stretched-link"> <img class="searchCardImg" src="assets/vectors/searchCard.png" alt=""> 3 طلبات تحت المراجعة </a>
+                    </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body">
+                          <img src="assets/vectors/Frame 188.png" alt="card" style="width: 80px; height: 80px;" >
+                        <h5 class="card-title">3 طلبات جديدة </h5>
+                        <p class="card-text">عروض أسعار</p>
+                        <a href="#" class="btn stretched-link"> <img class="searchCardImg" src="assets/vectors/searchCard.png" alt=""> 3 طلبات تحت المراجعة </a>
+                    </div>
+                    </div>
+                  </div>
+
+
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                        <img src="assets/vectors/frame2.png" alt="card" style="width: 80px; height: 80px;" >
+                      <h5 class="card-title">12 طلبات جديدة </h5>
+                      <p class="card-text">ردود مستشار</p>
+                      <a href="#" class="btn stretched-link"> <img class="searchCardImg" src="assets/vectors/searchCard.png" alt=""> 3 طلبات تحت المراجعة </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body">
+                          <img src="assets/vectors/frame4.png" alt="card" style="width: 80px; height: 80px;" >
+                        <h5 class="card-title">9 طلبات جديدة </h5>
+                        <p class="card-text">تحديد جلسة</p>
+                        <a href="#" class="btn stretched-link"> <img class="searchCardImg" src="assets/vectors/searchCard.png" alt="">  3 طلبات تحت المراجعة </a>
+                    </div>
+                    </div>
+                  </div>
+
+        
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body">
+                          <img src="assets/vectors/frame3.png" alt="card" style="width: 80px; height: 80px;" >
+                        <h5 class="card-title">8 طلبات جديدة </h5>
+                        <p class="card-text">انتهاء وكالة</p>
+                        <a href="#" class="btn stretched-link"> <img class="searchCardImg" src="assets/vectors/searchCard.png" alt=""> 3 طلبات تحت المراجعة </a>
+                    </div>
+                    </div>
+                  </div>
+        
+               
+        
+              </div>
+           </div>
+              
+            
+        </div>
+      
+        
+
+        <!-- Body -->
+
+       <hr>
+       
+  </div>
+
+</div>
+  
+   <script>
+    $('#derasatPage').click(function(){
+  $("#mainContent").load('/pages/derasat.html')
+});
+   </script>
+
+<script>
+    $('#khadmatPage').click(function(){
+  $("#mainContent").load('/pages/khadmatKanonyia.html')
+});
+   </script>
+
+<script>
+    $('#agentsPage').click(function(){
+  $("#mainContent").load('/pages/agents.html')
+});
+   </script>
+
+   <script>
+    $('#sessionPage').click(function(){
+  $("#mainContent").load('/pages/sessions.html')
+});
+   </script>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>

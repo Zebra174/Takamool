@@ -1,0 +1,283 @@
+:root{
+  direction:rtl;
+}
+  
+  .sidebar {
+    height: 100%;
+    width: 27%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+ 
+  #logo{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+  }
+   .home{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 6%;
+   }
+  .home a {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: large;
+    position: relative;
+    letter-spacing: -0.002em;
+    text-decoration: none;
+    color: #D3AC67;
+  }
+
+  .home img{
+    width: 18px;
+    height: 18.73px;
+    margin-top: 10px;
+  }
+
+  
+
+.btn-group-vertical{
+    width: 72%; 
+    border-radius: 4px;
+    margin-right: 10%;
+}
+
+.btn-group-vertical button{
+    background-color: #D3AC67;
+    color: black;
+    margin-top: 15%;
+   
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 133%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-group-vertical button:hover  {
+    background-color: #E5CDA4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+    border-radius: 4px;
+}
+
+.rotate img {
+    transform: rotate(-180deg);
+}
+
+.list-group{
+    margin-left: 20%;
+    width: 290px;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listA{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.logout{
+    width: 72%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px; 
+    gap: 8px;
+    margin-top: 10%;
+    margin-right: 10%;
+   background: #C4C4C4;
+   border-radius: 4px;
+}
+
+.logout a{
+    text-decoration: none;
+    font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 133%;
+/* identical to box height, or 133% */
+text-align: center;
+letter-spacing: -0.002em;
+/* Basic/black */
+color: #111111;
+}
+
+
+
+ /* .list-group-item a img {
+    position: absolute;
+    left: 8.33%;
+    right: 4.32%;
+    top: 8.33%;
+    bottom: 5.86%;
+}  */
+
+
+
+/* Search bar */
+.searchForm{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 8px 16px;
+
+gap: 8px;
+width: 100%;
+/* Gray/F5 */
+
+}
+
+.form-control{
+
+font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 45px;
+background: #F5F5F5;
+border-radius: 8px;
+width: 90%;
+}
+
+form a {
+  position: absolute;
+  margin-right: 56%;
+}
+
+
+
+.Notification {
+  background-color: #D3AC67;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 2%;
+}
+
+/* Body */
+
+.welcomeText{
+  font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 150%;
+text-align: right;
+/* identical to box height, or 150% */
+letter-spacing: -0.002em;
+}
+
+
+
+/* cards */
+
+.card{
+  background-color: #F5F5F5;
+  gap: 5px;
+  margin-top: 5%;
+
+}
+
+
+.card-title {
+  font-family: 'Cairo';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 162%;
+/* identical to box height, or 162% */
+
+text-align: right;
+letter-spacing: -0.002em;
+}
+
+.card-body img {
+  margin-left: 190px;
+
+}
+
+.card-text{
+  font-family: 'Cairo';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 162%;
+/* identical to box height, or 162% */
+
+text-align: right;
+letter-spacing: -0.002em;
+}
+
+
+.card a {
+  
+font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 23px;
+line-height: 271%;
+/* identical to box height, or 271% */
+
+text-align: right;
+letter-spacing: -0.002em;
+
+}
+
+.card a img{
+  margin-left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+
+.card:hover {
+  background: linear-gradient(90deg, #D3AC67 0%, #9B6E1E 46.88%, #747169 100%);
+border-radius: 8px;
+
+gap: 5px;
+}
+
+  
+  /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }

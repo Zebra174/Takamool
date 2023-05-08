@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/addKhadmat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+    <div class="box mt-5">
+        <div class="container">
+            <h4>إضافة وكالة جديدة</h4>
+
+            <form action="">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="case">القضية <span>*</span></label>
+                        <select id="Case" class="form-select form-select-lg">
+                            <option selected>اختر نوع القضية</option>
+                            <option value="1">عمالية</option>
+                            <option value="2">جنائية</option>
+                            <option value="3">تجارية</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="agentNo">رقم التوكيل</label>
+                        <input type="text" class="form-control  form-control-lg" id="AgentNo" placeholder="من فضلك ادخل رقم التوكيل">
+                    </div>
+                   
+                    <div class="form-group col-6">
+                        <label for="agentDeadline">نهاية التوكيل <span>*</span></label>
+                        <input type="date" class="form-control  form-control-lg" id="agentDeadline" placeholder="يوم/شهر/سنة"
+                            style="background-color: #F5F5F5;">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="qadyiaNumber">تعريف الوكالة</label>
+                        <input type="text" class="form-control  form-control-lg" id="QadyiaNumber" placeholder="من فضلك ادخل رقم القضية">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="qadyiaNumber">ملخص التوكيل</label>
+                        <input type="text" class="form-control  form-control-lg" id="QadyiaNumber" placeholder="من فضلك ادخل رقم القضية">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="case">تصنيف الوكيل</label>
+                        <select id="Case" class="form-select form-select-lg">
+                            <option selected>اختر تصنيف الوكيل</option>
+                            <option value="1">عمالية</option>
+                            <option value="2">جنائية</option>
+                            <option value="3">تجارية</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group mt-5">
+                        <div class="col-6">
+                          <button type="submit" class="btn btn-lg submitBtn form-control"><img src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات الوكالة</button>
+                        </div>
+            
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="/js/agents.js"></script>
+</body>

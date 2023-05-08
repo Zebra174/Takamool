@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/addKhadmat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+    <div class="box mt-5">
+        <div class="container">
+            <h4>بيانات القضية</h4>
+
+            <form action="">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="qadyiaName">اسم القضية <span>*</span></label>
+                        <input type="text" class="form-control  form-control-lg" id="QadyiaName" placeholder="من فضلك ادخل سم القضية">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="qadyiaNumber">رقم القضية <span>*</span></label>
+                        <input type="text" class="form-control  form-control-lg" id="QadyiaNumber" placeholder="من فضلك ادخل رقم القضية">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="startDate">تاريخ البدء <span>*</span></label>
+                        <input type="date" class="form-control  form-control-lg" id="startDate" placeholder="يوم/شهر/سنة"
+                            style="background-color: #F5F5F5;">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="moamlaType">نوع المعاملة <span>*</span></label>
+                        <select id="MoamlaType" class="form-select form-select-lg">
+                            <option selected>اختر نوع المعاملة</option>
+                            <option value="1">عمالية</option>
+                            <option value="2">جنائية</option>
+                            <option value="3">تجارية</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="clientName">اسم العميل <span>*</span></label>
+                        <select id="ClientName" class=" form-select form-select-lg">
+                            <option selected>اختر العميل</option>
+                            <option value="1">محمد حسن</option>
+                            <option value="2"> محمد القحطاني </option>
+                            <option value="3"> أحمد سمير</option>
+                        </select>
+                    </div>
+
+
+                    <hr class="mt-4">
+
+                    <h4>بيانات المحكمة</h4>
+
+                    <div class="form-group col-6">
+                        <label for="MakamaName">اسم المحكمة <span>*</span></label>
+                        <input type="text" class="form-control  form-control-lg" id="MakamaName" placeholder="من فضلك ادخل سم المحكمة">
+                    </div>
+                    
+                    <div class="form-group col-6">
+                        <label for="city">المدينة</label>
+                        <input type="text" class="form-control  form-control-lg" id="city" placeholder="من فضلك ادخل المدينة">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="circle">الدائرة</label>
+                        <input type="text" class="form-control  form-control-lg" id="circle" placeholder="من فضلك ادخل اسم الدائرة">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="ClientCase">العميل في القضية <span>*</span></label>
+                        <select id="ClientCase" class=" form-select form-select-lg">
+                            <option selected>نوع العميل</option>
+                            <option value="1">محمد حسن</option>
+                            <option value="2"> محمد القحطاني </option>
+                            <option value="3"> أحمد سمير</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="CaseSummary">ملخص القضية</label>
+                        <input type="text" class="form-control  form-control-lg" id="CaseSummary" placeholder="اترك رسالتك عن ملخص القضية">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="CaseDetails">تفاصيل القضية</label>
+                        <input type="text" class="form-control  form-control-lg" id="CaseDetails" placeholder="اترك رسالتك عن تفاصيل القضية">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="Lawyer">المحامي</label>
+                        <input type="text" class="form-control  form-control-lg" id="Lawyer" placeholder="من فضلك ادخل اسم المحامي">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="CaseNumber">رقم القضية في المحكمة</label>
+                        <input type="text" class="form-control  form-control-lg" id="CaseNumber" placeholder="من فضلك اكتب رقم القضية في المحكمة">
+                    </div>
+
+                    <hr class="mt-4">
+
+                    <h4>بيانات المدعي عليه</h4>
+
+                    <div class="form-group col-6">
+                        <label for="VictimName">اسم المدعي عليه <span>*</span></label>
+                        <input type="text" class="form-control  form-control-lg" id="VictimName" placeholder="من فضلك ادخل سم المدعي علية">
+                    </div>
+                    
+                    <div class="form-group col-6">
+                        <label for="address">العنوان</label>
+                        <input type="text" class="form-control  form-control-lg" id="address" placeholder="من فضلك ادخل العنوان">
+                    </div>
+
+                     
+                    <div class="form-group col-6">
+                        <label for="phoneNo">رقم الجوال</label>
+                        <input type="text" class="form-control  form-control-lg" id="phoneNo" placeholder="من فضلك أدخل رقم الجوال">
+                    </div>
+
+
+                    <div class="form-group mt-5">
+                        <div class="col-6">
+                          <button type="submit" class="btn btn-lg submitBtn form-control"><img src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات القضية</button>
+                        </div>
+            
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="/js/addKhadmat.js"></script>
+</body>
