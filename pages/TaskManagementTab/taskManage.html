@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/taskManage.css">
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+
+
+      
+        <h3 class="welcomeText me-3 mt-3">قائمة المهام</h3>
+       
+        <div class="row mt-5 px-3">
+          <h4>عدد المهام</h4>
+           <div class="col-4">
+               <div class="form-group">
+                <select id="Case" class="form-select">
+                    <option selected>اختر عدد المهام</option>
+                    <option value="1">5  مهام</option>
+                    <option value="2">10 مهام</option>
+                    <option value="3">15 مهام</option>
+                </select>
+            </div>
+           </div>
+           <div class="col-8 derasaSearch">
+               <form action="" class="inline">
+                   <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
+                   <input type="text" class=" form-control form-control-lg" placeholder="البحث برقم الدراسة">
+               </form>
+           </div>
+        </div>
+  
+
+  <div class="box mt-4">
+         <div class="container">
+            <table class="table table-borderless text-center">
+                <thead>
+                  <tr>
+                    <th>العدد<br><span class="badge rounded-pill me-2">15</span><hr></th>
+                    <th>وصف المهمة</th>
+                    <th><img class="ms-1" src="/assets/vectors/calendar.png" alt="calendar"> من تاريخ</th>
+                    <th ><img class="ms-1" src="/assets/vectors/calendar.png" alt="calendar"> الي تاريخ</th>
+                    <th>حالة القضية</th>
+                    <th>حالة المهمة</th>
+                  </tr>
+                </thead>
+             
+                <tbody>
+                  <tr>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">1</span><hr></td>
+                    <td>مهمة اسئـتناف قضية
+                      <p class="secondaryText"> يقوم المحامي باستئناف عن
+                        القضية رقم واعلام العميل
+                        الجلسة ليحضر
+                       </p>
+                    </td>
+                    <td>August 17,2022</td>
+                    <td>Mar 17,2023 </td>
+                    <td>حالة القضية <br><span class="badge rounded-pill bg-primary-custom statusPill me-2"><p class="text-center mt-2">بدأت</p> </span></td>
+                    <td>حالة المهمة <br><span class="badge rounded-pill bg-success-custom statusPill me-2"><p class="text-center mt-2">انتهت</p> </span></td>
+                  </tr>
+
+                  <tr>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">2</span><hr></td>
+                    <td>مهمة اسئـتناف قضية
+                      <p class="secondaryText"> يقوم المحامي باستئناف عن
+                        القضية رقم واعلام العميل
+                        الجلسة ليحضر
+                       </p>
+                    </td>
+                    <td>August 17,2022</td>
+                    <td>Mar 17,2023 </td>
+                    <td>حالة القضية <br><span class="badge rounded-pill  statusPill me-2"><p class="text-center mt-2">تحت الإجراء</p> </span></td>
+                    <td>حالة المهمة <br><span class="badge rounded-pill bg-danger-custom statusPill me-2"><p class="text-center mt-2">Pending</p> </span></td>
+                  </tr>
+
+                  <tr>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">3</span><hr></td>
+                    <td>مهمة اسئـتناف قضية
+                      <p class="secondaryText"> يقوم المحامي باستئناف عن
+                        القضية رقم واعلام العميل
+                        الجلسة ليحضر
+                       </p>
+                    </td>
+                    <td>August 17,2022</td>
+                    <td>Mar 17,2023 </td>
+                    <td>حالة القضية <br><span class="badge rounded-pill bg-warning-custom statusPill me-2"><p class="text-center mt-2">On Progress</p> </span></td>
+                    <td>حالة المهمة <br><span class="badge rounded-pill bg-success-custom statusPill me-2"><p class="text-center mt-2">انتهت</p> </span></td>
+                  </tr>
+
+                  <tr>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">4</span><hr></td>
+                    <td>مهمة اسئـتناف قضية
+                      <p class="secondaryText"> يقوم المحامي باستئناف عن
+                        القضية رقم واعلام العميل
+                        الجلسة ليحضر
+                       </p>
+                    </td>
+                    <td>August 17,2022</td>
+                    <td>Mar 17,2023 </td>
+                    <td>حالة القضية <br><span class="badge rounded-pill statusPill me-2"><p class="text-center mt-2">تحت الإجراء</p> </span></td>
+                    <td>حالة المهمة <br><span class="badge rounded-pill bg-success-custom statusPill me-2"><p class="text-center mt-2">انتهت</p> </span></td>
+                  </tr>
+
+                  <tr>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">5</span><hr></td>
+                    <td>مهمة اسئـتناف قضية
+                      <p class="secondaryText"> يقوم المحامي باستئناف عن
+                        القضية رقم واعلام العميل
+                        الجلسة ليحضر
+                       </p>
+                    </td>
+                    <td>August 17,2022</td>
+                    <td>Mar 17,2023 </td>
+                    <td>حالة القضية <br><span class="badge rounded-pill statusPill me-2"><p class="text-center mt-2">تحت الإجراء</p> </span></td>
+                    <td>حالة المهمة <br><span class="badge rounded-pill bg-success-custom statusPill me-2"><p class="text-center mt-2">انتهت</p> </span></td>
+                  </tr>
+
+                  <tr>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">6</span><hr></td>
+                    <td>مهمة اسئـتناف قضية
+                      <p class="secondaryText"> يقوم المحامي باستئناف عن
+                        القضية رقم واعلام العميل
+                        الجلسة ليحضر
+                       </p>
+                    </td>
+                    <td>August 17,2022</td>
+                    <td>Mar 17,2023 </td>
+                    <td>حالة القضية <br><span class="badge rounded-pill bg-primary-custom statusPill me-2"><p class="text-center mt-2">بدأت</p> </span></td>
+                    <td>حالة المهمة <br><span class="badge rounded-pill bg-success-custom statusPill me-2"><p class="text-center mt-2">انتهت</p> </span></td>
+                  </tr>
+                </tbody>
+              </table>
+         </div>
+    </div>
+
+</body>
+
+</html>

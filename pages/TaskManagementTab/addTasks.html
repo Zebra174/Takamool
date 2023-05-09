@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/addKhadmat.css">
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+    <div class="box mt-5">
+        <div class="container">
+            <h4>إضافة مهمة </h4>
+
+            <form action="">
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="clientName">اسم الموظف</label>
+                        <select id="clientName" class="form-select form-select-lg">
+                            <option selected>اختر اسم الموظف </option>
+                            <option value="1">احمد سمير</option>
+                            <option value="2">محمد حسن</option>
+                            <option value="3">مها القحطاني</option>
+                        </select>
+                    </div>
+                 <span><br></span>
+                    <div class="form-group col-6">
+                        <label for="startDate">من تاريخ <span>*</span></label>
+                        <input type="date" class="form-control  form-control-lg" id="startDate"
+                         placeholder="يوم/شهر/سنة" style="background-color: #F5F5F5;">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="endDate">إلي <span>*</span></label>
+                        <input type="date"  class="form-control  form-control-lg" id="endDate" placeholder="يوم/شهر/سنة"
+                            style="background-color: #F5F5F5;">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="status">الحالة </label>
+                        <select id="status" class="form-select form-select-lg">
+                            <option selected>اختر نوع الحالة </option>
+                            <option value="1">تحت الإجراء</option>
+                            <option value="2">معلقة</option>
+                            <option value="3">انتهت</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="projectManager">مدير المشروع </label>
+                        <select id="projectManager" class="form-select form-select-lg">
+                            <option selected>مدير المشروع </option>
+                            <option value="1">أحمد جمال</option>
+                            <option value="2">محمد دياب</option>
+                            <option value="3">يوسف محمد</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskDetails" class="form-label">وصف المهمة</label>
+                        <textarea class="form-control" id="taskDetails" rows="3" placeholder="من فضلك ادخل وصف المهمة أو الملاحظات للمُسند إليه"></textarea>
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-lg submitBtn form-control"><img
+                                    src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات القضية</button>
+                        </div>
+
+                    </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+   
+</body>

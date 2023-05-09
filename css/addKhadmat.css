@@ -96,3 +96,9 @@ line-height: 45px;
 letter-spacing: -0.002em;
 color: black;
 }
+
+textarea{
+    outline: 1px solid #D3AC67;
+    font-family: 'Cairo';
+}
+
