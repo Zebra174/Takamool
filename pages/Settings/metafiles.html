@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/derasat.css">
+    <title>FrontEnd BootCamp</title>
+</head>
+
+<body>
+
+
+
+    <h3 class="welcomeText me-3">عدد ملفات النظام</h3>
+    <span class="badge rounded-pill me-5" style="
+        font-family: 'Cairo';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 18px;
+        text-align: center;
+        color: #D3AC67;
+        width: 128px;
+        height: 42px;
+        background-color: #F9F5FF;
+        border-radius: 16px;">5 ملفات</span>
+
+    <div class="box mt-5">
+        <div class="row mt-3 px-5">
+            <h4 class="mb-3">ملفات نوع القضية</h4>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز القضية">
+                </form>
+            </div>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع القضية">
+                </form>
+            </div>
+            <div class="col-5">
+                <button id="addQadyia" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة قضية </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>رمز القضية</th>
+                        <th>اسم العميل</th>
+                        <th>تعديل البيانات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>أحمد سمير</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>مها القحطاني</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>مها القحطاني</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>محمد حسن</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="box mt-5">
+        <div class="row mt-3 px-5">
+            <h4 class="mb-3">ملفات حالة القضية</h4>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز القضية">
+                </form>
+            </div>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب حالة القضية">
+                </form>
+            </div>
+            <div class="col-5">
+                <button id="addStatus" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة حالة لقضية</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>رمز القضية</th>
+                        <th>اسم العميل</th>
+                        <th>تعديل البيانات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>أحمد سمير</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>مها القحطاني</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>مها القحطاني</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>محمد حسن</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="box mt-5">
+        <div class="row mt-3 px-5">
+            <h4 class="mb-3">أنواع العقد</h4>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز العقد">
+                </form>
+            </div>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع العقد">
+                </form>
+            </div>
+            <div class="col-5">
+                <button id="addContract" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة نوع العقد</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>رمز العقد</th>
+                        <th>نوع العقد</th>
+                        <th>تعديل البيانات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>سنوي</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>شهري</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>عدد استشارات</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="box mt-5">
+        <div class="row mt-3 px-5">
+            <h4 class="mb-3">الخدمات</h4>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز الخدمة">
+                </form>
+            </div>
+            <div class="col-3 derasaSearch">
+                <form action="" class="inline">
+                    <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع الخدمة">
+                </form>
+            </div>
+            <div class="col-5">
+                <button id="addService" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة الخدمة</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>رمز الخدمة</th>
+                        <th>نوع الخدمة</th>
+                        <th>تعديل البيانات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>إستشارة كتابية</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>إستشارة حضورية</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>متابعة دورية</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>طلب دراسة قضية مفصلة</td>
+                        <td class="text-center">
+                            <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
+                                    src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                            <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
+                                    src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script>
+        $('#addQadyia').click(function () {
+            $("#mainContent").load('#')
+        });
+    </script>
+
+<script>
+    $('#addStatus').click(function () {
+        $("#mainContent").load('#')
+    });
+</script>
+
+<script>
+    $('#addContract').click(function () {
+        $("#mainContent").load('#')
+    });
+</script>
+
+<script>
+    $('#addService').click(function () {
+        $("#mainContent").load('#')
+    });
+</script>
+
+</body>
+
+</html>
