@@ -32,17 +32,17 @@
                     <div id="demo" class="collapse">
                             <div class="list-group">
                                 <li class="list-group-item"> 
-                                     <a class="listA" id="derasatPage" type="button">الدراسات <img src="assets/vectors/logout.png" alt="logout"></a>
+                                     <a class="listA" id="derasatPage" type="button" href="#">الدراسات <img src="assets/vectors/logout.png" alt="logout"></a>
                                 </li>
                                 
                                 <li class="list-group-item">
-                                    <a class="listA"  id="khadmatPage">الخدمات القانونية <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                    <a class="listA"  id="khadmatPage" href="#">الخدمات القانونية <img src="assets/vectors/logout.png" alt="logout"> </a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a class="listA" id="agentsPage">الوكلاء <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                    <a class="listA" id="agentsPage" href="#">الوكلاء <img src="assets/vectors/logout.png" alt="logout"> </a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a class="listA" id="sessionPage">الجلسات <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                    <a class="listA" id="sessionPage" href="#">الجلسات <img src="assets/vectors/logout.png" alt="logout"> </a>
                                 </li>
                                
                             </div>
@@ -88,11 +88,11 @@
                 <div id="demo3" class="collapse">
                     <div class="list-group">
                         <li class="list-group-item"> 
-                             <a class="listA" href="#">إضافة متسخدم <img src="assets/vectors/logout.png" alt="logout"> </a>
+                             <a class="listA" id="addUser" href="#">إضافة متسخدم <img src="assets/vectors/logout.png" alt="logout"> </a>
                         </li>
                         
                         <li class="list-group-item">
-                            <a class="listA" href="#">صلاحيات المستخدمين <img src="assets/vectors/logout.png" alt="logout"> </a>
+                            <a class="listA" id="usersAuth" href="#" >صلاحيات المستخدمين <img src="assets/vectors/logout.png" alt="logout"> </a>
                         </li>
                         <li class="list-group-item">
                             <a class="listA" id="metafiles" href="#">ملفات التعريف <img src="assets/vectors/logout.png" alt="logout"></a>
@@ -103,17 +103,17 @@
                     <div id="demo4" class="collapse">
                         <div class="list-group">
                             <li class="list-group-item"> 
-                                 <a class="listA" href="#">تقارير المالية <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                 <a class="listA" href="">تقارير المالية <img src="assets/vectors/logout.png" alt="logout"> </a>
                             </li>
                             
                             <li class="list-group-item">
-                                <a class="listA" href="#">تقارير العملاء <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                <a class="listA" href="">تقارير العملاء <img src="assets/vectors/logout.png" alt="logout"> </a>
                             </li>
                             <li class="list-group-item">
-                                <a class="listA" href="#">تقارير القضايا <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                <a class="listA" href="">تقارير القضايا <img src="assets/vectors/logout.png" alt="logout"> </a>
                             </li>
                             <li class="list-group-item">
-                                <a class="listA" href="#">تقارير الموظفين <img src="assets/vectors/logout.png" alt="logout"> </a>
+                                <a class="listA" href="">تقارير الموظفين <img src="assets/vectors/logout.png" alt="logout"> </a>
                             </li>
                            
                         </div>
@@ -226,25 +226,25 @@
   
    <script>
     $('#derasatPage').click(function(){
-  $("#mainContent").load('../pages/StudiesTab/derasat.html')
+  $("#mainContent").load('/pages/StudiesTab/derasat.html')
 });
    </script>
 
 <script>
     $('#khadmatPage').click(function(){
-  $("#mainContent").load('../pages/StudiesTab/khadmatKanonyia.html')
+  $("#mainContent").load('/pages/StudiesTab/khadmatKanonyia.html')
 });
    </script>
 
 <script>
     $('#agentsPage').click(function(){
-  $("#mainContent").load('../pages/StudiesTab/agents.html')
+  $("#mainContent").load('/pages/StudiesTab/agents.html')
 });
    </script>
 
    <script>
     $('#sessionPage').click(function(){
-  $("#mainContent").load('../pages/StudiesTab/sessions.html')
+  $("#mainContent").load('/pages/StudiesTab/sessions.html')
 });
    </script>
 
@@ -252,38 +252,38 @@
 
 <script>
     $('#addClientData').click(function(){
-  $("#mainContent").load('../pages/WorkManagementTab/addClientData.html')
+  $("#mainContent").load('/pages/WorkManagementTab/addClientData.html')
 });
    </script>
 
 <script>
     $('#clientsData').click(function(){
-  $("#mainContent").load('../pages/WorkManagementTab/clientsData.html')
+  $("#mainContent").load('/pages/WorkManagementTab/clientsData.html')
 });
    </script>
 
 <script>
     $('#consulting').click(function(){
-  $("#mainContent").load('../pages/WorkManagementTab/consulting.html')
+  $("#mainContent").load('/pages/WorkManagementTab/consulting.html')
 });
    </script>
 <!-- end of work management tab -->
 
 <script>
     $('#taskManage').click(function(){
-  $("#mainContent").load('../pages/TaskManagementTab/taskManage.html')
+  $("#mainContent").load('/pages/TaskManagementTab/taskManage.html')
 });
    </script>
 
 <script>
   $('#addTasks').click(function(){
-$("#mainContent").load('../pages/TaskManagementTab/addTasks.html')
+$("#mainContent").load('/pages/TaskManagementTab/addTasks.html')
 });
  </script>
 
 <script>
   $('#taskSummary').click(function(){
-$("#mainContent").load('../pages/TaskManagementTab/taskSummary.html')
+$("#mainContent").load('/pages/TaskManagementTab/taskSummary.html')
 });
  </script>
 
@@ -291,12 +291,26 @@ $("#mainContent").load('../pages/TaskManagementTab/taskSummary.html')
 
  <script>
   $('#metafiles').click(function(){
-$("#mainContent").load('../pages/Settings/metafiles.html')
+$("#mainContent").load('/pages/Settings/metafiles.html')
 });
  </script>
  
+ <script>
+  $('#addUser').click(function(){
+$("#mainContent").load('/pages/Settings/addUsers.html')
+});
+ </script>
 
+<script>
+  $('#usersAuth').click(function(){
+$("#mainContent").load('/pages/Settings/userAuth.html')
+});
+ </script>
+ 
+ 
+
+ 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-   <script src="../js/main.js"></script>
+   <script src="/js/main.js"></script>
 </body>
 </html>
