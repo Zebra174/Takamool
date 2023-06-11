@@ -29,6 +29,25 @@ namespace API.Controllers
             var tasks = await _context.TaskTemplates.ToListAsync();
             return Ok(tasks);
         }
+
+         [HttpPost("AddTask")]
+        public async Task<ActionResult> AddTask([FromBody] TaskTemplate task)
+        {
+            var task1 = await _context.TaskTemplates.SingleOrDefaultAsync(x => x.Id == task.Id);
+
+            
+            
+                await _context.TaskTemplates.AddAsync(task);
+                await _context.SaveChangesAsync();
+
+            
+            return Ok(true);
+        }
+
+          private async Task<bool> TaskTitleExist(string? title)
+        {
+            return await _context.TaskTemplates.AnyAsync(x => x.Title == title);
+        }
        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

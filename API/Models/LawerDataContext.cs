@@ -682,7 +682,7 @@ public partial class LawerDataContext : DbContext
             entity.ToTable("task_template");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Active).HasColumnName("active");
             entity.Property(e => e.ActualEnd)
