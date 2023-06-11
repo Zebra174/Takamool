@@ -1,0 +1,133 @@
+.sidebar {
+  height: 100%;
+  width: 27%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+#logo{
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+}
+ .home{
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 6%;
+ }
+.home a {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: large;
+  position: relative;
+  letter-spacing: -0.002em;
+  text-decoration: none;
+  color: #D3AC67;
+}
+
+.home img{
+  width: 18px;
+  height: 18.73px;
+  margin-top: 10px;
+}
+
+
+
+.btn-group-vertical{
+  width: 72%; 
+  border-radius: 4px;
+  margin-right: 10%;
+}
+
+.btn-group-vertical button{
+  background-color: #D3AC67;
+  color: black;
+  margin-top: 15%;
+ 
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-group-vertical button:hover  {
+  background-color: #E5CDA4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.rotate img {
+  transform: rotate(-180deg);
+}
+
+.list-group{
+  margin-left: 20%;
+  width: 285px;
+  height: 200%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.listA{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.logout{
+  width: 72%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px; 
+  gap: 8px;
+  margin-top: 10%;
+  margin-right: 10%;
+ background: #C4C4C4;
+ border-radius: 4px;
+}
+
+.logout a{
+  text-decoration: none;
+  font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 133%;
+/* identical to box height, or 133% */
+text-align: center;
+letter-spacing: -0.002em;
+/* Basic/black */
+color: #111111;
+}

@@ -1,0 +1,4 @@
+<label for="AgenceName">{{label}}<span>*</span></label>
+<input [class.is-invalid]="control.touched && control.invalid" [formControl]="control" type={{type}}
+    class="form-control  form-control-lg" placeholder={{label}}>
+<div class="invalid-feedback"> برجاء ادخال {{label}}</div>

@@ -1,0 +1,68 @@
+/* cards */
+
+.card{
+    background-color: #F5F5F5;
+    gap: 5px;
+    margin-top: 5%;
+  
+  }
+  
+  
+  .card-title {
+    font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 162%;
+  /* identical to box height, or 162% */
+  
+  text-align: right;
+  letter-spacing: -0.002em;
+  }
+  
+  .card-body img {
+    margin-left: 190px;
+  
+  }
+  
+  .card-text{
+    font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 162%;
+  /* identical to box height, or 162% */
+  
+  text-align: right;
+  letter-spacing: -0.002em;
+  }
+  
+  
+  .card a {
+    
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 271%;
+  /* identical to box height, or 271% */
+  
+  text-align: right;
+  letter-spacing: -0.002em;
+  
+  }
+  
+  .card a img{
+    margin-left: 0;
+    width: 20px;
+    height: 20px;
+  }
+  
+  
+  .card:hover {
+    background: linear-gradient(90deg, #D3AC67 0%, #9B6E1E 46.88%, #747169 100%);
+  border-radius: 8px;
+  
+  gap: 5px;
+  }
+  

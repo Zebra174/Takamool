@@ -1,0 +1,70 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>إضافة بيانات عميل جديد</h4>
+
+        <form [formGroup]="addCustomerForm" class="d-flex" (ngSubmit)="AddCustomer()" autocomplete="off">
+
+            <div class="row">
+
+                <div class="form-group col-6">
+                    <label for="clientName">اسم العميل <span>*</span></label>
+                    <input [class.is-invalid]="addCustomerForm.get('custName')?.errors" formControlName="custName"
+                        type="text" class="form-control  form-control-lg" id="QadyiaName"
+                        placeholder="من فضلك ادخل سم العميل">
+                    <div class="invalid-feedback">برجاء ادخال اسم العميل</div>
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="identity">الهوية <span>*</span></label>
+                    <input [class.is-invalid]="addCustomerForm.get('custIdNumber')?.errors"
+                        formControlName="custIdNumber" type="text" class="form-control  form-control-lg"
+                        id="QadyiaNumber" placeholder="من فضلك ادخل رقم الهوية">
+                    <div class="invalid-feedback">برجاء ادخال هوية العميل </div>
+
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="emailaddress">البريد الإلكتروني <span>*</span></label>
+                    <input [class.is-invalid]="addCustomerForm.get('custEmail')?.errors" formControlName="custEmail"
+                        type="text" class="form-control  form-control-lg" id="QadyiaNumber"
+                        placeholder="من فضلك ادخل البريد الإلكتروني">
+                    <div class="invalid-feedback">برجاء ادخال البريد الإلكتروني</div>
+
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="city">المدينة</label>
+                    <input [class.is-invalid]="addCustomerForm.get('custCity')?.errors" formControlName="custCity"
+                        type="text" class="form-control  form-control-lg" id="city" placeholder="من فضلك ادخل المدينة">
+                </div>
+
+
+                <div class="form-group col-6">
+                    <label for="address">العنوان</label>
+                    <input [class.is-invalid]="addCustomerForm.get('custAddress')?.errors" formControlName="custAddress"
+                        type="text" class="form-control  form-control-lg" id="address"
+                        placeholder="من فضلك ادخل العنوان">
+                </div>
+
+
+                <div class="form-group col-6">
+                    <label for="phoneNo">رقم الجوال</label>
+                    <input [class.is-invalid]="addCustomerForm.get('custMobile')?.errors" formControlName="custMobile"
+                        type="text" class="form-control  form-control-lg" id="phoneNo"
+                        placeholder="من فضلك أدخل رقم الجوال">
+                </div>
+
+
+                <div class="form-group mt-5">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-lg submitBtn form-control"><img
+                                src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات العميل الجديد</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+        <!-- <h3>form value : {{addCustomerForm.value | json}}</h3>
+        <h3>form status : {{addCustomerForm.status | json}}</h3> -->
+    </div>

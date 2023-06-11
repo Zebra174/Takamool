@@ -1,0 +1,57 @@
+<div class="box mt-5">
+    <h3 class="welcomeText me-3">{{title}}</h3>
+
+    <div class="row mt-3 px-5">
+       <div class="col-3">
+           <h4>عدد الوكلات</h4>
+           <span class="badge rounded-pill">{{TotalAgencies}} وكالات</span>
+       </div>
+       <div class="col-4 derasaSearch">
+        <form action="" class="inline">
+          <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
+          <input type="text" class=" form-control" placeholder="البحث برقم الوكالة" [(ngModel)]="searchText" name="agenceName">
+      </form>  
+       </div>
+       <div class="col-5">
+           <button id="addAgent" class="btn addBtn" routerLink="/AddAgent"  routerLinkActive="active"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة وكالة جديدة</button>
+       </div> 
+    </div>
+
+
+    <div class="container">
+       <table class="table table-bordered text-center">
+           <thead>
+             <tr>
+               <th>رقم التوكيل</th>
+               <th>نوع القضية </th>
+               <th>اسم العميل</th>
+               <th>الحالة</th>
+               <th>تعديل البيانات</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let data of issuesStatuses | searchFilter: searchText">
+              <td>{{data.agenceNo}}</td>
+              <!-- <td *ngIf="agent.agenceType==1"> عمالية</td>
+              <td *ngIf="agent.agenceType==2"> جنائية</td>
+              <td *ngIf="agent.agenceType==3"> تجارية</td> -->
+              <td>{{data.agenceType}}</td>
+              <td>{{data.agenceName}}</td>
+              <td> <img src={{data.agencePic}}> {{data.lokupValue}} </td>
+           
+              <td class="text-center">  
+                <a type="button" class="edit " title="Edit" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                <ng-template #template>
+                  <div class="modal-body text-center">
+                    <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                    <button type="button" class="btn btn-danger" (click)="deleteAgency(data.agenceId)" >نعم انا متأكد !</button>
+                    <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                  </div>
+                </ng-template>
+            </td>
+           </tbody>
+           
+         </table>
+    </div>
+</div>

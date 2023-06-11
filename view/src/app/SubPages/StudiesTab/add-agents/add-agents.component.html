@@ -1,0 +1,78 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>إضافة وكالة جديدة</h4>
+
+        <form [formGroup]="addAgentForm" class="d-flex" (ngSubmit)="AddAgent()" autocomplete="off">
+            <div class="row">
+
+                <div class="form-group col-6">
+                    <label for="case">نوع القضية<span>*</span></label>
+                    <select [class.is-invalid]="addAgentForm.get('IsuueNumber')?.errors" 
+                    formControlName="IsuueNumber" id="Case" class="form-select form-select-lg">
+                        <option  selected>اختر نوع القضية</option>
+                        <option *ngFor="let issue of issues" value="{{issue.isuuenumber}}">{{issue.isuueSubject}}</option>
+                    </select>
+                    <div class="invalid-feedback">برجاء اختيار نوع القضية</div>
+                </div>
+                  
+            
+              
+                <div class="form-group col-6">
+                    <label for="AgenceNo">رقم التوكيل <span>*</span></label>
+                    <input [class.is-invalid]="addAgentForm.get('AgenceNo')?.errors"
+                     formControlName="AgenceNo" type="text" class="form-control  form-control-lg" id="IssueNo"
+                        placeholder="من فضلك ادخل رقم التوكيل">
+                        <div class="invalid-feedback">برجاء ادخال رقم التوكيل</div>
+                </div>
+              
+                <div class="form-group col-6">
+                    <label for="agentDeadline">نهاية التوكيل <span>*</span></label>
+                    <input [class.is-invalid]="addAgentForm.get('AgenceTo')?.errors" 
+                    formControlName="AgenceTo" type="date" class="form-control  form-control-lg" id="agentDeadline"
+                        placeholder="يوم/شهر/سنة" style="background-color: #F5F5F5;">
+                        <div class="invalid-feedback"> برجاء اختير  نهاية التوكيل</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="AgenceName">اسم الوكيل <span>*</span></label>
+                    <input [class.is-invalid]="addAgentForm.get('AgenceName')?.errors" 
+                    formControlName="AgenceName" type="text" class="form-control  form-control-lg" id="QadyiaNumber"
+                        placeholder="من فضلك ادخل اسم الوكيل ">
+                        <div class="invalid-feedback"> برجاء ادخال  اسم الوكيل</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="AgenceNote">ملخص التوكيل</label>
+                    <input  formControlName="AgenceNote" type="text" class="form-control  form-control-lg" id="QadyiaNumber"
+                        placeholder="من فضلك ادخل ملخص الوكيل">    
+                </div>
+                <div class="form-group col-6">
+                    <label for="case">تصنيف الوكيل <span>*</span></label>
+                    <select [class.is-invalid]="addAgentForm.get('AgenceType')?.errors" 
+                    formControlName="AgenceType" id="Case" class="form-select form-select-lg">
+                        <option selected>اختر تصنيف الوكيل</option>
+                        <option *ngFor="let a of at" value="{{a.lokupId}}">{{a.lokupValue}}</option>
+                    </select>
+                    <div class="invalid-feedback"> برجاء اختيار  تصنيف الوكيل</div>
+                </div>
+         
+                <div class="row" >
+                    <ul class="text-danger">
+                      <li *ngFor="let error of validationErrors"> {{error}} </li>
+                    </ul>
+                  </div>
+                <div class="form-group mt-5">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-lg submitBtn form-control"><img
+                                src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات الوكالة</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+   <!-- <h3>form value : {{addAgentForm.value | json}}</h3>
+  <h3>form status : {{addAgentForm.status | json}}</h3>  -->
+
+    </div>
+
+</div>

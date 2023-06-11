@@ -1,0 +1,186 @@
+/* Search bar */
+body {
+    background-color: #F5F5F5;
+}
+  
+
+.searchForm input {
+    background-color: white;
+}  
+  
+
+  
+
+.box {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px 0px;
+    gap: 24px;
+ 
+    
+}
+
+h4{
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 117%;
+   
+}
+
+.form-group select {
+    background-color:#F5F5F5 ;
+    
+    border: none;
+    font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 45px;
+/* identical to box height */
+
+letter-spacing: -0.002em;
+}
+
+
+
+form{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.derasaSearch{
+font-family: 'Cairo';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 50px;
+margin-top: 1%;
+width: 65%;
+}
+
+.derasaSearch img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    margin-right: 38%;
+    margin-top: 13px;
+}
+
+
+th {
+   
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 133%;
+    /* identical to box height, or 133% */
+    text-align: center; 
+    vertical-align: top;
+}
+
+td{
+    font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 37px;
+letter-spacing: -0.002em;
+
+}
+.dateInfo {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 37px;
+    letter-spacing: -0.002em;
+    color: #A1A1AA;
+}
+
+.statusPill {
+    padding: 4px 10px 3px;
+gap: 10px;
+width: 120px;
+height: 40px;
+}
+
+.statusPill p {
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+}
+
+.secondaryText{
+    font-size: 15px;
+    width: 230px;
+}
+
+.addBtn{
+    background-color:#C89741;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 133%;
+   
+}
+
+.addBtn:hover {
+    color: white;
+}
+
+.badge{
+    background: #A1A1AA;
+    border-radius: 24px;
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 120%;
+   
+}
+
+hr {
+    border: 2px solid #D3AC67;
+}
+
+.card {
+    background-color: white;
+}
+
+.progress {
+   width: 230px;
+   height: 25px;
+}
+.leftTable{
+    text-align: right;
+}
+
+/* bootstrap colors adjustments */
+
+.bg-warning-custom {
+    background-color:  #D3AC67;
+}
+
+.bg-primary-custom{
+    background-color: #2D85D7;
+}
+
+.bg-success-custom{
+    background-color: #2DD748;
+}
+
+.bg-danger-custom {
+    background-color: #D72D31;
+}
+

@@ -1,0 +1,166 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>بيانات القضية</h4>
+
+        <form [formGroup]="addServiceForm" class="d-flex" (ngSubmit)="AddService()" autocomplete="off">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="qadyiaName">اسم القضية <span>*</span></label>
+                    <input 
+                    [class.is-invalid]="addServiceForm.get('isuueSubject')?.errors" 
+                    formControlName="isuueSubject"
+                     type="text" class="form-control  form-control-lg" id="QadyiaName" placeholder="من فضلك ادخل سم القضية">
+                     <div class="invalid-feedback">برجاء ادخال  اسم القضية</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="qadyiaNumber">رقم القضية <span>*</span></label>
+                    <input 
+                    [class.is-invalid]="addServiceForm.get('isuuenumber')?.errors" 
+                    formControlName="isuuenumber"
+                    type="text" class="form-control  form-control-lg" id="QadyiaNumber" placeholder="من فضلك ادخل رقم القضية">
+                    <div class="invalid-feedback"> برجاء ادخال رقم القضية</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="startDate">تاريخ البدء <span>*</span></label>
+                    <input [class.is-invalid]="addServiceForm.get('isuueOpenDate')?.errors" 
+                    formControlName="isuueOpenDate"
+                    type="date" class="form-control  form-control-lg" id="startDate" placeholder="يوم/شهر/سنة"
+                        style="background-color: #F5F5F5;">
+                        <div class="invalid-feedback"> برجاء ادخال تاريخ البدء</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="case">نوع المعاملة<span>*</span></label>
+                    <select [class.is-invalid]="addServiceForm.get('contractType')?.errors" 
+                    formControlName="contractType" id="Case" class="form-select form-select-lg">
+                        <option  selected>اختر نوع المعاملة</option>
+                        <option *ngFor="let xt of contractType" value="{{xt.lokupId}}">{{xt.lokupValue}}</option>
+                    </select>
+                    <div class="invalid-feedback">برجاء اختيار نوع المعاملة</div>
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="case">نوع القضية<span>*</span></label>
+                    <select [class.is-invalid]="addServiceForm.get('isuueType')?.errors" 
+                    formControlName="isuueType" id="Case" class="form-select form-select-lg">
+                        <option  selected>اختر نوع القضية</option>
+                        <option *ngFor="let it of issueType" value="{{it.lokupId}}">{{it.lokupValue}}</option>
+                    </select>
+                    <div class="invalid-feedback">برجاء اختيار نوع القضية</div>
+                </div>
+                  
+                <div class="form-group col-6">
+                    <label for="clientName">اسم العميل <span>*</span></label>
+                    <select  [class.is-invalid]="addServiceForm.get('customerId')?.errors" 
+                    formControlName="customerId" id="ClientName" class=" form-select form-select-lg">
+                        <option selected>اختر العميل</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <div class="invalid-feedback">برجاء اختيار العميل </div>
+                </div>
+
+
+                <hr class="mt-4">
+
+                <h4>بيانات المحكمة</h4>
+
+                <div class="form-group col-6">
+                    <label for="MakamaName">اسم المحكمة <span>*</span></label>
+                    <input [class.is-invalid]="addServiceForm.get('isseName')?.errors" 
+                    formControlName="isseName" 
+                      type="text" class="form-control  form-control-lg" id="MakamaName" placeholder="من فضلك ادخل سم المحكمة">
+                     <div class="invalid-feedback"> برجاء ادخال اسم المحكمة</div> 
+                </div>
+                <!-- CONTINUE FROM HERE -->
+                <div class="form-group col-6">
+                    <label for="city">المدينة</label>
+                    <input   type="text" class="form-control  form-control-lg" id="city" placeholder="من فضلك ادخل المدينة">
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="circle">الدائرة</label>
+                    <input type="text" class="form-control  form-control-lg" id="circle" placeholder="من فضلك ادخل اسم الدائرة">
+                </div>
+                <div class="form-group col-6">
+                    <label for="ClientCase">العميل في القضية <span>*</span></label>
+                    <select [class.is-invalid]="addServiceForm.get('customerType')?.errors" 
+                    formControlName="customerType" 
+                     id="ClientCase" class=" form-select form-select-lg">
+                        <option selected>نوع العميل</option>
+                        <option *ngFor="let ct of customerType" value="{{ct.lokupId}}">{{ct.lokupValue}}</option>
+                    </select>
+                    <div class="invalid-feedback"> برجاء اختيار نوع العميل</div> 
+                </div>
+
+                <!-- unfinished  above -->
+
+
+                <div class="form-group col-6">
+                    <label for="CaseSummary">ملخص القضية</label>
+                    <input  [class.is-invalid]="addServiceForm.get('isuueSummary')?.errors" 
+                    formControlName="isuueSummary"
+                      type="text" class="form-control  form-control-lg" id="CaseSummary" placeholder="اترك رسالتك عن ملخص القضية">
+                </div>
+                <div class="form-group col-6">
+                    <label for="CaseDetails">تفاصيل القضية</label>
+                    <input [class.is-invalid]="addServiceForm.get('isuueDetail')?.errors" 
+                    formControlName="isuueDetail"
+                     type="text" class="form-control  form-control-lg" id="CaseDetails" placeholder="اترك رسالتك عن تفاصيل القضية">
+                </div>
+                <div class="form-group col-6">
+                    <label for="Lawyer">المحامي</label>
+                    <input [class.is-invalid]="addServiceForm.get('lowerName')?.errors" 
+                    formControlName="lowerName" 
+                    type="text" class="form-control  form-control-lg" id="Lawyer" placeholder="من فضلك ادخل اسم المحامي">
+                    <div class="invalid-feedback"> برجاء ادخال اسم المحامي</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="CaseNumber">رقم القضية في المحكمة</label>
+                    <input [class.is-invalid]="addServiceForm.get('contractNumber')?.errors" 
+                    formControlName="contractNumber"
+                     type="text" class="form-control  form-control-lg" id="CaseNumber" placeholder="من فضلك اكتب رقم القضية في المحكمة">
+                </div>
+                
+                <hr class="mt-4">
+
+                <h4>بيانات المدعي عليه</h4>
+
+                <div class="form-group col-6">
+                    <label for="VictimName">اسم المدعي عليه <span>*</span></label>
+                    <input [class.is-invalid]="addServiceForm.get('agnName')?.errors" 
+                    formControlName="agnName" 
+                     type="text" class="form-control  form-control-lg" id="VictimName" placeholder="من فضلك ادخل سم المدعي علية">
+                     <div class="invalid-feedback">  برجاء ادخال اسم المدعي عليه</div>
+                </div>
+                
+                <div class="form-group col-6">
+                    <label for="address">العنوان</label>
+                    <input [class.is-invalid]="addServiceForm.get('agnaddress')?.errors" 
+                    formControlName="agnaddress" 
+                    type="text" class="form-control  form-control-lg" id="address" placeholder="من فضلك ادخل العنوان">
+                </div>
+
+                 
+                <div class="form-group col-6">
+                    <label for="phoneNo">رقم الجوال</label>
+                    <input [class.is-invalid]="addServiceForm.get('agnphone')?.errors" 
+                    formControlName="agnphone"  
+                    type="text" class="form-control  form-control-lg" id="phoneNo" placeholder="من فضلك أدخل رقم الجوال">
+                </div>
+
+
+                <div class="form-group mt-5">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-lg submitBtn form-control"><img src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات القضية</button>
+                    </div>
+                </div>
+
+             
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,50 @@
+<div class="box mt-5">
+    <h3 class="welcomeText me-3">القسم الخاص بالجلسات</h3>
+
+    <div class="row mt-3 px-5">
+       <div class="col-3">
+           <h4>عدد الجلسات</h4>
+           <span class="badge rounded-pill">{{TotalSessions}} جلسات</span>
+       </div>
+       <div class="col-4 derasaSearch">
+           <form action="" class="inline">
+               <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
+               <input type="text" class=" form-control" placeholder="البحث برقم الجلسة" [(ngModel)]="searchText" name="agenceName">
+           </form>
+       </div>
+       <div class="col-5">
+           <button id="addSession" class="btn addBtn" routerLink="/AddSession"  routerLinkActive="active"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة جلسة جديدة</button>
+       </div> 
+    </div>
+
+    <div class="container">
+       <table class="table table-bordered text-center">
+           <thead>
+             <tr>
+               <th>رقم الجلسة</th>
+               <th>وصف الجلسة</th>
+               <th>نوع القضية</th>
+               <th>تعديل البيانات</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let session of sessions | searchFilter: searchText">
+               <td>{{session.sessionId}}</td>
+               <td>{{session.sessionNote}}</td>
+               <td>to be completed</td>
+               <td class="text-center">  
+                   <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                   <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                   <ng-template #template>
+                     <div class="modal-body text-center">
+                       <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                       <button type="button" class="btn btn-danger" (click)="deleteSession(session.sessionId)" >نعم انا متأكد !</button>
+                       <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                     </div>
+                   </ng-template>
+               </td>
+             </tr>
+           </tbody>
+         </table>
+    </div>
+</div>

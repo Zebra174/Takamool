@@ -1,0 +1,52 @@
+
+.form-group{
+    margin-top: 3%;
+}
+
+.form-group label {
+    font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 37px;
+letter-spacing: -0.002em;
+}
+
+.form-group label span {
+    color:red;
+}
+
+form input {
+    outline: 1px solid #D3AC67;
+    border-radius: 8px;
+}
+
+.form-group select {
+    background-color:#F5F5F5 ;
+    outline: 1px solid #D3AC67;
+    font-family: 'Cairo';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 45px;
+/* identical to box height */
+
+letter-spacing: -0.002em;
+}
+
+hr{
+    height: 10px;
+    border: 1.5px solid #A2A2A2;
+}
+
+.form-check{
+    margin-top: 4%;
+}
+
+.form-check-input{
+    position: absolute;
+    margin-right: 20px;
+    font-size: 24px;
+   outline: 3px solid; 
+   outline-color: #D3AC67;                      
+}
