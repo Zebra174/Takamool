@@ -30,6 +30,14 @@ export class CreateService {
   AddCustomer(model:any){
     return this.http.post(this.baseUrl+'customer/AddCustomer',model);
   }
+
+  //end of WorkManagement Tab
+
+  //Start of TaskManagementTab
+  AddTask(model:any){
+    return this.http.post(this.baseUrl+'task/AddTask',model);
+  }
+  
   
 }
 

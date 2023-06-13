@@ -75,12 +75,16 @@
                 <!-- CONTINUE FROM HERE -->
                 <div class="form-group col-6">
                     <label for="city">المدينة</label>
-                    <input   type="text" class="form-control  form-control-lg" id="city" placeholder="من فضلك ادخل المدينة">
+                    <input [class.is-invalid]="addServiceForm.get('courtCity')?.errors" 
+                    formControlName="courtCity"  
+                     type="text" class="form-control  form-control-lg" id="city" placeholder="من فضلك ادخل المدينة">
                 </div>
 
                 <div class="form-group col-6">
                     <label for="circle">الدائرة</label>
-                    <input type="text" class="form-control  form-control-lg" id="circle" placeholder="من فضلك ادخل اسم الدائرة">
+                    <input [class.is-invalid]="addServiceForm.get('courtCircle')?.errors" 
+                    formControlName="courtCircle"  
+                     type="text" class="form-control  form-control-lg" id="circle" placeholder="من فضلك ادخل اسم الدائرة">
                 </div>
                 <div class="form-group col-6">
                     <label for="ClientCase">العميل في القضية <span>*</span></label>

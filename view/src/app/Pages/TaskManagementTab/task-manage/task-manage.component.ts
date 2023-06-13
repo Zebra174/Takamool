@@ -14,73 +14,44 @@ export class TaskManageComponent {
    modalRef!: BsModalRef ;
    message: string = "";
    searchText:string ="";
-   issuesStatuses: any;
-   agencyStatus:any;
-   agenceType:any;
-   data:any;
+   taskStatus:any;
+
 
   constructor(private http: HttpClient,private modalService: BsModalService,private toastr:ToastrService) {}
 
   ngOnInit(): void {
-    this.getTasks();
-    this.getIssuesStatuses(); 
-    this.getAgenceType();
+   this.getTaskValues()
   }
   
    get TotalTasks():number {
     return this.tasks.length;
    }
-   
-   
-   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, {class: 'modal-md'});
-   }
-
-
   
-   getTasks(){
-    this.http.get('https://localhost:5001/api/task/GetTasks').subscribe({
+   getTaskValues(){
+    this.http.get('https://localhost:5001/api/task/GetTaskTableValues').subscribe({
       next: response => this.tasks = response,
       error : error => console.log(error),
       complete: () => this.TotalTasks
      })
    }
 
-   getIssuesStatuses(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetIssueStatus').subscribe({
-      next: response => this.issuesStatuses= response,
-      error: error => console.log(error),
-      complete: () => console.log(this.tasks)
-    })
-  }
+   getStatusesClass(taskStatus:number){
+        switch(taskStatus)
+        {
+          case 1 : {return 'bg-default-custom '; break;};
+          case 2 : {return 'bg-primary-custom '; break;};
+          case 3 : {return 'bg-danger-custom '; break;};
+          case 4 : {return 'bg-success-custom '; break;};
+          default: return 'bg-primary-custom ';
+        }
+   }
 
-  getAgenceType(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetAgenceType').subscribe({
-      next: response => this.agenceType=response,
+  getTaskStatus(){
+    this.http.get('https://localhost:5001/api/task/GetTaskStatus').subscribe({
+      next: response => this.taskStatus=response,
       error: error => console.log(error),
       complete: () => console.log("Request Done")
     })
-  }
-
-   
-   deleteAgency(id:number) {
-    this.http.delete('https://localhost:5001/api/issuesTab/DeleteAgency/'+id).subscribe({
-      next: () =>this.modalRef.hide()  ,
-      error : error => {
-        this.toastr.error(error.error),
-        console.log(error);
-      },
-      complete: () =>{
-        this.ngOnInit();
-        this.toastr.success("تم حذف الوكالة بنجاح") ;
-      }
-      
-     })
-  }
-
-  decline(): void {
-    this.message = 'Declined!';
-    this.modalRef.hide();
   }
 
 }

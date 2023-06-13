@@ -39,15 +39,16 @@
              
                 <tbody>
                   <tr *ngFor="let task of tasks | searchFilter: searchText">
-                    <td>المهمة<br><span class="badge rounded-pill me-2">{{task.id}}</span><hr></td>
+                    <td>المهمة<br><span class="badge rounded-pill me-2">{{task.taskId}}</span><hr></td>
                     <td>  {{task.title}}
                       <p class="secondaryText"> {{task.description}}
                        </p>
                     </td>
-                    <td>{{task.projectedStart}}</td>
-                    <td>{{task.projectedEnd}} </td>
+                    <td>{{task.projectedStart | date : "longDate"}}</td>
+                    <td>{{task.projectedEnd | date:"longDate"}} </td>
+                    <td >حالة المهمة <br><span [ngClass]="getStatusesClass(task.taskStatus)" class="badge rounded-pill  statusPill me-2"><p class="text-center mt-2">{{task.lokupValue}}</p> </span></td>
                     <td>حالة القضية <br><span class="badge rounded-pill bg-primary-custom statusPill me-2"><p class="text-center mt-2">بدأت</p> </span></td>
-                    <td>حالة المهمة <br><span class="badge rounded-pill bg-success-custom statusPill me-2"><p class="text-center mt-2">انتهت</p> </span></td>
+                   
                   </tr>
                 </tbody>
               </table>

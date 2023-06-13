@@ -52,7 +52,9 @@ export class AddLegalServicesComponent implements OnInit {
       agnName:[null, Validators.required],
       agnaddress:[],
       agnphone:[],
-      isuueStatus:['2']
+      isuueStatus:['2'],
+      courtCity:[],
+      courtCircle:[],
       // AgenceType:['اختر تصنيف الوكيل', [Validators.required, this.checkNull(this.choose2)]],
     })
   }

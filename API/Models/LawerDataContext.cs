@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
@@ -69,13 +69,14 @@ public partial class LawerDataContext : DbContext
 
     public virtual DbSet<NoteNotification> NoteNotifications { get; set; }
 
+    public virtual DbSet<Task> Tasks { get; set; }
+
     public virtual DbSet<TaskTemplate> TaskTemplates { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
+    {
 
-        }
-
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<BillingGroup>(entity =>
@@ -516,7 +517,7 @@ public partial class LawerDataContext : DbContext
 
         modelBuilder.Entity<Isuue>(entity =>
         {
-           
+          
 
             entity.Property(e => e.AgnName).HasMaxLength(200);
             entity.Property(e => e.Agnaddress).HasMaxLength(200);
@@ -525,6 +526,12 @@ public partial class LawerDataContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("contractNumber");
             entity.Property(e => e.ContractType).HasColumnName("contractType");
+            entity.Property(e => e.CourtCircle)
+                .HasMaxLength(255)
+                .HasColumnName("courtCircle");
+            entity.Property(e => e.CourtCity)
+                .HasMaxLength(255)
+                .HasColumnName("courtCity");
             entity.Property(e => e.IsseName).HasMaxLength(200);
             entity.Property(e => e.IsuueDetail).HasColumnType("text");
             entity.Property(e => e.IsuueId)
@@ -542,7 +549,7 @@ public partial class LawerDataContext : DbContext
         modelBuilder.Entity<IsuuesAgency>(entity =>
         {
             entity
-                
+               
                 .ToTable("Isuues_Agencies");
 
             entity.Property(e => e.AgenceDate).HasColumnType("datetime");
@@ -599,7 +606,7 @@ public partial class LawerDataContext : DbContext
         modelBuilder.Entity<IsuuesSession>(entity =>
         {
             entity
-                
+               
                 .ToTable("Isuues_Session");
 
             entity.Property(e => e.AisuueNumber).HasColumnName("AIsuueNumber");
@@ -675,6 +682,41 @@ public partial class LawerDataContext : DbContext
             entity.Property(e => e.NoteId).HasColumnName("note_id");
         });
 
+        modelBuilder.Entity<Task>(entity =>
+        {
+            entity.HasKey(e => e.TaskId).HasName("PK__Tasks__DD5D55A2A6DB912A");
+
+            entity.Property(e => e.TaskId).HasColumnName("taskID");
+            entity.Property(e => e.Active).HasColumnName("active");
+            entity.Property(e => e.ActualEnd)
+                .HasColumnType("date")
+                .HasColumnName("actual_end");
+            entity.Property(e => e.Description)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("description");
+            entity.Property(e => e.DueDate)
+                .HasColumnType("date")
+                .HasColumnName("due_date");
+            entity.Property(e => e.EmpName)
+                .HasMaxLength(255)
+                .HasColumnName("empName");
+            entity.Property(e => e.ProjManger)
+                .HasMaxLength(255)
+                .HasColumnName("projManger");
+            entity.Property(e => e.ProjectedEnd)
+                .HasColumnType("date")
+                .HasColumnName("projected_end");
+            entity.Property(e => e.ProjectedStart)
+                .HasColumnType("date")
+                .HasColumnName("projected_start");
+            entity.Property(e => e.TaskStatus).HasColumnName("taskStatus");
+            entity.Property(e => e.Title)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("title");
+        });
+
         modelBuilder.Entity<TaskTemplate>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("task_template_pkey");
@@ -682,7 +724,7 @@ public partial class LawerDataContext : DbContext
             entity.ToTable("task_template");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedOnAdd()
+                .ValueGeneratedNever()
                 .HasColumnName("id");
             entity.Property(e => e.Active).HasColumnName("active");
             entity.Property(e => e.ActualEnd)

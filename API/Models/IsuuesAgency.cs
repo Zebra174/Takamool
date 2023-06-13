@@ -8,7 +8,7 @@ public partial class IsuuesAgency
 {
     [Key]
     public long AgenceId { get; set; }
-    
+
     public DateTime? AgenceDate { get; set; }
 
     public string? AgenceName { get; set; }

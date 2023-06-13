@@ -148,6 +148,8 @@ namespace API.Controllers
             return Ok(issuesStatus);
         }
 
+
+          
 //..............................................................................
 
    [HttpGet("GetIssues")]
@@ -157,12 +159,35 @@ namespace API.Controllers
             return Ok(issues);
         }
 
+         [HttpGet("GetIssuesTable")]
+        public async Task<ActionResult> GetIssuesTable()
+        {
+            var issues = await (from a in _context.IsuuesLokupTables
+                   join b in _context.Isuues
+            on a.LokupId equals b.IsuueStatus
+                   // join k in _context.IsuuesLokupTables on  a.IsuueType equals k.LokupId
+                   where a.LokupType == 2
+                   select new { a.LokupValue,b.Isuuenumber,b.IsuueId,b.IsuueSubject,b.IsuueOpenDate,b.IsuueStatus }).ToListAsync();
+            return Ok(issues);
+        }
+
+
+           [HttpGet("GetDoneIssues")]
+        public async Task<ActionResult> GetDoneIssues()
+        {
+            var doneIssues =  await _context.Isuues.Where(x=>x.IsuueStatus==4).CountAsync();
+            return Ok(doneIssues);
+        }
+
+
          [HttpGet("LokupTable")]
         public async Task<ActionResult> LokupTable()
         {
             var lokup = await _context.IsuuesLokupTables.ToListAsync();
             return Ok(lokup);
         }
+
+        
 
             [HttpGet("IssueType")]
         public async Task<ActionResult> IssueType()

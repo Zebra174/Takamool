@@ -6,7 +6,7 @@ namespace API.Models;
 
 public partial class Isuue
 {
-      [Key]
+    [Key]
     public long IsuueId { get; set; }
 
     public long? CustomerId { get; set; }
@@ -40,4 +40,8 @@ public partial class Isuue
     public string? Agnaddress { get; set; }
 
     public string? IsseName { get; set; }
+
+    public string? CourtCity { get; set; }
+
+    public string? CourtCircle { get; set; }
 }

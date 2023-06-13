@@ -1,53 +1,74 @@
 <div class="box mt-5">
     <div class="container">
         <h4>إضافة مهمة </h4>
-
+        <form [formGroup]="addTaskForm" class="d-flex" (ngSubmit)="AddTask()" autocomplete="off">
             <div class="row">
                 <div class="form-group col-6">
-                    <label for="clientName">اسم الموظف</label>
-                    <select id="clientName" class="form-select form-select-lg">
+                    <label for="clientName">اسم الموظف <span>*</span></label>
+                    <select [class.is-invalid]="addTaskForm.get('empName')?.errors" formControlName="empName"
+                        id="clientName" class="form-select form-select-lg">
                         <option selected>اختر اسم الموظف </option>
-                        <option value="1">احمد سمير</option>
-                        <option value="2">محمد حسن</option>
-                        <option value="3">مها القحطاني</option>
+                        <option value="amr">amr</option>
+                        <option value="ahmed">ahmed</option>
+                        <option value="khaled">khaled</option>
                     </select>
+                    <div class="invalid-feedback">برجاء اختيار اسم الموظف</div>
                 </div>
-             <span><br></span>
+                <!-- <span><br></span> -->
+
+                <div class="form-group col-6">
+                    <label for="startDate"> عنوان المهمة <span>*</span></label>
+                    <input [class.is-invalid]="addTaskForm.get('title')?.errors" formControlName="title" type="text"
+                        class="form-control  form-control-lg" id="taskTitle" placeholder="من فضلك ادخل عنوان المهمة">
+                        <div class="invalid-feedback">برجاء ادخال عنوان المهمة</div>
+                </div>
+
                 <div class="form-group col-6">
                     <label for="startDate">من تاريخ <span>*</span></label>
-                    <input type="date" class="form-control  form-control-lg" id="startDate"
-                     placeholder="يوم/شهر/سنة" style="background-color: #F5F5F5;">
+                    <input [class.is-invalid]="addTaskForm.get('projectedStart')?.errors"
+                        formControlName="projectedStart" type="date" class="form-control  form-control-lg"
+                        id="startDate" placeholder="يوم/شهر/سنة" style="background-color: #F5F5F5;">
+
+                        <div class="invalid-feedback">برجاء ادخال بداية التاريخ </div>
                 </div>
 
                 <div class="form-group col-6">
                     <label for="endDate">إلي <span>*</span></label>
-                    <input type="date"  class="form-control  form-control-lg" id="endDate" placeholder="يوم/شهر/سنة"
+                    <input [class.is-invalid]="addTaskForm.get('projectedEnd')?.errors" formControlName="projectedEnd"
+                        type="date" class="form-control  form-control-lg" id="endDate" placeholder="يوم/شهر/سنة"
                         style="background-color: #F5F5F5;">
+                        
+                        <div class="invalid-feedback">برجاء ادخال نهاية التاريخ </div>
                 </div>
 
                 <div class="form-group col-6">
-                    <label for="status">الحالة </label>
-                    <select id="status" class="form-select form-select-lg">
+                    <label for="status">الحالة <span>*</span></label>
+                    <select [class.is-invalid]="addTaskForm.get('taskStatus')?.errors" formControlName="taskStatus"
+                        id="status" class="form-select form-select-lg">
                         <option selected>اختر نوع الحالة </option>
-                        <option value="1">تحت الإجراء</option>
-                        <option value="2">معلقة</option>
-                        <option value="3">انتهت</option>
+                        <option *ngFor="let status of taskStatus" value="{{status.lokupId}}">{{status.lokupValue}}
+                        </option>
                     </select>
+                    <div class="invalid-feedback">برجاء اختيار  حالة المهمة </div>
                 </div>
 
                 <div class="form-group col-6">
                     <label for="projectManager">مدير المشروع </label>
-                    <select id="projectManager" class="form-select form-select-lg">
+                    <select [class.is-invalid]="addTaskForm.get('projManger')?.errors" formControlName="projManger"
+                        id="projectManager" class="form-select form-select-lg">
                         <option selected>مدير المشروع </option>
-                        <option value="1">أحمد جمال</option>
-                        <option value="2">محمد دياب</option>
-                        <option value="3">يوسف محمد</option>
+                        <option value="أحمد جمال">أحمد جمال</option>
+                        <option value="محمد دياب">محمد دياب</option>
+                        <option value="يوسف محمد">يوسف محمد</option>
                     </select>
+                  
                 </div>
 
                 <div class="form-group">
                     <label for="taskDetails" class="form-label">وصف المهمة</label>
-                    <textarea class="form-control" id="taskDetails" rows="3" placeholder="من فضلك ادخل وصف المهمة أو الملاحظات للمُسند إليه"></textarea>
+                    <textarea [class.is-invalid]="addTaskForm.get('description')?.errors" formControlName="description"
+                        class="form-control" id="taskDetails" rows="3"
+                        placeholder="من فضلك ادخل وصف المهمة أو الملاحظات للمُسند إليه"></textarea>
                 </div>
 
                 <div class="form-group mt-5">
@@ -56,8 +77,10 @@
                                 src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات القضية</button>
                     </div>
 
-                </div> 
+                </div>
 
+            </div>
+        </form>
+        <h3>form value : {{addTaskForm.value | json}}</h3>
+        <h3>form status : {{addTaskForm.status | json}}</h3> 
     </div>
-
-</div>
