@@ -1,0 +1,50 @@
+<div class="box mt-5">
+    <h3 class="welcomeText me-3">جدول الجلسات</h3>
+
+    <div class="row mt-3 px-5">
+       <div class="col-3">
+           <h4>عدد الجلسات</h4>
+           <span class="badge rounded-pill">{{TotalCustomers}} الجلسات</span>
+       </div>
+       <div class="col-4 derasaSearch">
+           <form action="" class="inline">
+            
+               <input type="text" class=" form-control" placeholder="البحث برقم الجلسة/ القضية او العميل"  [(ngModel)]="searchText" name="agenceName">
+           </form>
+       </div>
+       <div class="col-5">
+           <button id="addSession" class="btn addBtn" routerLink="/AddSession"  routerLinkActive="active"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة جلسة جديدة</button>
+       </div> 
+    </div>
+
+    <div class="container">
+       <table class="table table-bordered text-center">
+           <thead>
+             <tr>
+                <th>#</th>
+               <th>العميل</th>
+               <th>القضية</th>
+               <th>نوع القضية</th>
+               <th>المحكمة</th>
+               <th>الدائرة</th>
+               <th>المحامي</th>
+               <th>موعد الجلسة</th>
+               <th>الاجراء</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr *ngFor="let cust of custSessions | searchFilter: searchText" >
+               <td>{{cust.custId}}</td>
+               <td>{{cust.custName}}</td>
+               <td>{{cust.isuueSubject}}</td>
+               <td>{{cust.lokupValue}}</td>
+               <td>{{cust.isseName}}</td>
+               <td>{{cust.courtCircle}}</td>
+               <td>{{cust.lowerName}}</td>
+               <td>{{cust.sessionDate | date : "fullDate"}}</td>
+               <td></td>
+             </tr>
+           </tbody>
+         </table>
+    </div>
+</div>

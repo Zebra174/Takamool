@@ -141,7 +141,9 @@ namespace API.Controllers
             on a.Isuuenumber equals b.IsuueNumber
                    join k in _context.IsuuesLokupTables on a.IsuueStatus equals k.LokupId
                    where k.LokupType == 2
-                   select new { k.LokupValue, b.AgenceNo, b.AgenceName, b.AgenceTo, b.AgenceId, b.AgencePic, b.AgenceType }).ToListAsync();
+                   join l in _context.IsuuesLokupTables on a.IsuueType equals l.LokupId
+                   where l.LokupType == 1
+                   select new { k.LokupValue, b.AgenceNo, b.AgenceName, b.AgenceTo, b.AgenceId, b.AgencePic , at= l.LokupValue}).ToListAsync();
 
 
 
@@ -194,6 +196,20 @@ namespace API.Controllers
         {
             var lokup = await _context.IsuuesLokupTables.Where(x=> x.LokupType==1).ToListAsync();
             return Ok(lokup);
+        }
+
+           [HttpGet("IssueTable")]
+        public async Task<ActionResult> IssueTable()
+        {
+           var issues = await (from a in _context.Isuues
+                   join b in _context.Customers
+            on a.CustomerId equals b.CustId
+                   join k in _context.IsuuesLokupTables on a.IsuueStatus equals k.LokupId
+                   where k.LokupType == 2
+                   join l in _context.IsuuesLokupTables on a.IsuueType equals l.LokupId
+                   where l.LokupType == 1
+                   select new { k.LokupValue, a.Isuuenumber, b.CustName , at= l.LokupValue}).ToListAsync();
+            return Ok(issues);
         }
 
           [HttpGet("ContractType")]
@@ -254,6 +270,20 @@ namespace API.Controllers
         public async Task<ActionResult> GetSessions()
         {
             var sessions = await _context.IsuuesSessions.ToListAsync();
+            return Ok(sessions);
+        }
+
+        
+           [HttpGet("GetSessionsTable")]
+        public async Task<ActionResult> GetSessionsTable()
+        {
+           var sessions = await (from a in _context.Isuues
+                   join b in _context.IsuuesSessions
+            on a.Isuuenumber equals b.AisuueNumber.ToString()
+                   join k in _context.IsuuesLokupTables on a.IsuueType equals k.LokupId
+                   where k.LokupType == 1
+              
+                   select new { k.LokupValue, b.SessionId,b.SessionName}).ToListAsync();
             return Ok(sessions);
         }
 

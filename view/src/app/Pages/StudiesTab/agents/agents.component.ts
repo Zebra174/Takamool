@@ -52,7 +52,7 @@ export class AgentsComponent {
     this.http.get('https://localhost:5001/api/issuesTab/GetIssueStatus').subscribe({
       next: response => this.issuesStatuses= response,
       error: error => console.log(error),
-      complete: () => console.log(this.agencies)
+      complete: () => console.log(this.issuesStatuses)
     })
   }
 

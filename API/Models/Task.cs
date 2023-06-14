@@ -26,4 +26,6 @@ public partial class Task
     public string? EmpName { get; set; }
 
     public string? ProjManger { get; set; }
+
+    public double? TaskProgress { get; set; }
 }

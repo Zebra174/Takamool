@@ -73,10 +73,12 @@ public partial class LawerDataContext : DbContext
 
     public virtual DbSet<TaskTemplate> TaskTemplates { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
+    public virtual DbSet<User> Users { get; set; }
 
-    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            
+        }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<BillingGroup>(entity =>
@@ -224,7 +226,7 @@ public partial class LawerDataContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            
+           
 
             entity.Property(e => e.CustAddress)
                 .HasMaxLength(250)
@@ -517,7 +519,7 @@ public partial class LawerDataContext : DbContext
 
         modelBuilder.Entity<Isuue>(entity =>
         {
-          
+           
 
             entity.Property(e => e.AgnName).HasMaxLength(200);
             entity.Property(e => e.Agnaddress).HasMaxLength(200);
@@ -606,7 +608,7 @@ public partial class LawerDataContext : DbContext
         modelBuilder.Entity<IsuuesSession>(entity =>
         {
             entity
-               
+                
                 .ToTable("Isuues_Session");
 
             entity.Property(e => e.AisuueNumber).HasColumnName("AIsuueNumber");
@@ -710,6 +712,7 @@ public partial class LawerDataContext : DbContext
             entity.Property(e => e.ProjectedStart)
                 .HasColumnType("date")
                 .HasColumnName("projected_start");
+            entity.Property(e => e.TaskProgress).HasColumnName("taskProgress");
             entity.Property(e => e.TaskStatus).HasColumnName("taskStatus");
             entity.Property(e => e.Title)
                 .HasMaxLength(255)
@@ -748,6 +751,22 @@ public partial class LawerDataContext : DbContext
             entity.Property(e => e.Title)
                 .HasColumnType("text")
                 .HasColumnName("title");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.UserId).HasName("PK__Users__CB9A1CDF298BF136");
+
+            entity.Property(e => e.UserId).HasColumnName("userID");
+            entity.Property(e => e.DateOfBirth)
+                .HasColumnType("date")
+                .HasColumnName("dateOfBirth");
+            entity.Property(e => e.Name).HasMaxLength(255);
+            entity.Property(e => e.Pass).HasMaxLength(255);
+            entity.Property(e => e.UserType).HasColumnName("userType");
+            entity.Property(e => e.Username)
+                .HasMaxLength(255)
+                .HasColumnName("username");
         });
 
         OnModelCreatingPartial(modelBuilder);

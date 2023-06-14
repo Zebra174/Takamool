@@ -39,7 +39,7 @@ export class SessionsComponent {
 
   
    getSessions(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetSessions').subscribe({
+    this.http.get('https://localhost:5001/api/issuesTab/GetSessionsTable').subscribe({
       next: response => this.sessions = response,
       error : error => console.log(error),
       complete: () => this.TotalSessions

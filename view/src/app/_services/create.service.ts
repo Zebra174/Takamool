@@ -37,6 +37,12 @@ export class CreateService {
   AddTask(model:any){
     return this.http.post(this.baseUrl+'task/AddTask',model);
   }
+
+
+  //Settings Tab
+  AddUser(model:any){
+    return this.http.post(this.baseUrl+'user/AddUser',model);
+  }
   
   
 }

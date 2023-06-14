@@ -1,19 +1,19 @@
 <div class="box mt-5">
-    <h3 class="welcomeText me-3">القسم الخاص بالخدمات القانونية</h3>
+    <h3 class="welcomeText me-3">جدول الجلسات</h3>
 
     <div class="row mt-3 px-5">
        <div class="col-3">
-           <h4>عدد القضايا</h4>
-           <span class="badge rounded-pill">{{TotalIssues}} قضية</span>
+           <h4>عدد الجلسات</h4>
+           <span class="badge rounded-pill"> الجلسات</span>
        </div>
        <div class="col-4 derasaSearch">
            <form action="" class="inline">
                <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
-               <input type="text" class=" form-control" placeholder="البحث برقم القضية" [(ngModel)]="searchText" name="agenceName">
+               <input type="text" class=" form-control" placeholder="البحث برقم المستخدم"  [(ngModel)]="searchText" name="agenceName">
            </form>
        </div>
        <div class="col-5">
-           <button id="addQadyia" class="btn addBtn" routerLink="/AddLegalServices"  routerLinkActive="active"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة قضية جديدة</button>
+           <button id="addAgent" class="btn addBtn" routerLink="/AddUsers"  routerLinkActive="active"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة مستخدم جديدة</button>
        </div> 
     </div>
 
@@ -21,33 +21,35 @@
        <table class="table table-bordered text-center">
            <thead>
              <tr>
-               <th>رقم القضية </th>
-               <th>نوع القضية </th>
-               <th>اسم العميل</th>
-               <th>الحالة</th>
-               <th>تعديل البيانات</th>
+               <th>العميل</th>
+               <th>القضية</th>
+               <th>نوع القضية</th>
+               <th>المحكمة</th>
+               <th>الدائرة</th>
+               <th>المحامي</th>
+               <th>موعد الجلسة</th>
+               <th>الاجراء</th>
              </tr>
            </thead>
            <tbody>
-             <tr *ngFor="let issue of issues | searchFilter: searchText">
-               <td>{{issue.isuuenumber}}</td>
-               <td>{{issue.at}}</td>
-               <td>{{issue.custName}}</td>
-               <td> <img src="/assets/vectors/abortIcon.png" alt="abort">{{issue.lokupValue}}</td>
+             <tr>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
                <td class="text-center">  
                    <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                    <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                    <ng-template #template>
                      <div class="modal-body text-center">
                        <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
-                       <button type="button" class="btn btn-danger"  >نعم انا متأكد !</button>
+                       <button type="button" class="btn btn-danger" >نعم انا متأكد !</button>
                        <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
                      </div>
                    </ng-template>
                </td>
-              
+             </tr>
            </tbody>
          </table>
     </div>
 </div>
-

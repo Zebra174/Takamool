@@ -18,6 +18,9 @@ import { AddClientDataComponent } from './Pages/WorkManagementTab/add-client-dat
 import { AddAgentsComponent } from './SubPages/StudiesTab/add-agents/add-agents.component';
 import { AddLegalServicesComponent } from './SubPages/StudiesTab/add-legal-services/add-legal-services.component';
 import { AddSessionComponent } from './SubPages/StudiesTab/add-session/add-session.component';
+import { SessionsReportComponent } from './Pages/Reports/sessions-report/sessions-report.component';
+import { ServicesReportComponent } from './Pages/Reports/services-report/services-report.component';
+import { CustomersReportComponent } from './Pages/Reports/customers-report/customers-report.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -41,6 +44,11 @@ const routes: Routes = [
   {path:'AddAgent',component:AddAgentsComponent},
   {path:'AddLegalServices',component:AddLegalServicesComponent},
   {path:'AddSession',component:AddSessionComponent},
+
+
+  {path:'SessionsReport',component:SessionsReportComponent},
+  {path:'CustomersReport',component:CustomersReportComponent},
+  {path:'ServicesReport',component:ServicesReportComponent},
 
   {path:'**',component:AppComponent,pathMatch:'full'}
 ];

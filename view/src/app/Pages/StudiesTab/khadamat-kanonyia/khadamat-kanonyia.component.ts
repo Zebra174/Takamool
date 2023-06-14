@@ -24,7 +24,7 @@ export class KhadamatKanonyiaComponent implements OnInit{
    }
    
   getIssues(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetIssues').subscribe({
+    this.http.get('https://localhost:5001/api/issuesTab/IssueTable').subscribe({
       next: response => this.issues = response,
       error : error => console.log(error),
       complete: () => this.TotalIssues

@@ -14,6 +14,7 @@ export class BusyService {
     this.spinnerService.show(undefined,{
       type: 'line-scale-pulse-out',
       bdColor: 'rgba(0, 0, 0, 0.8)',
+      color: '#FFFFFF'
       
     });
   }

@@ -30,8 +30,8 @@
            <tbody>
              <tr *ngFor="let session of sessions | searchFilter: searchText">
                <td>{{session.sessionId}}</td>
-               <td>{{session.sessionNote}}</td>
-               <td>to be completed</td>
+               <td>{{session.sessionName}}</td>
+               <td>{{session.lokupValue}}</td>
                <td class="text-center">  
                    <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                    <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
