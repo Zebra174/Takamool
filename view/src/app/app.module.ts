@@ -40,7 +40,6 @@ import { ServicesReportComponent } from './Pages/Reports/services-report/service
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +86,7 @@ import { ServicesReportComponent } from './Pages/Reports/services-report/service
       positionClass: 'toast-bottom-right',
 
     }),
+  
    
   ],
   providers: [    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}],

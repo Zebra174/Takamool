@@ -13,16 +13,20 @@ import { CreateService } from 'src/app/_services/create.service';
 export class AddTasksComponent {
   addTaskForm: FormGroup = new FormGroup({});
   choose1: string = 'اختر نوع الحالة';
-  choose3: string = 'مدير المشروع ';
+  choose3: string = 'الوظيفة';
   choose2: string = 'اختر اسم الموظف';
   validationErrors:string[]  | undefined;
   taskStatus:any
+  users:any;
+  roles:any;
 
   constructor(private http: HttpClient, private createService: CreateService, private toastr: ToastrService, private router: Router,
     private fb:FormBuilder) { }
   ngOnInit(): void {
     this.IntializForm();
     this.getStatuses();
+    this.getUser();
+    this.getUserRoles();
   }
 
   IntializForm() {
@@ -32,7 +36,7 @@ export class AddTasksComponent {
       projectedStart: [null, Validators.required],
       projectedEnd:[null, Validators.required],
       empName:['اختر اسم الموظف', [Validators.required, this.checkNull(this.choose2)]],
-      projManger:['مدير المشروع', [Validators.required, this.checkNull(this.choose3)]],
+      projManger:['الوظيفة', [Validators.required, this.checkNull(this.choose3)]],
       description:[],
       actualEnd:[null],
       dueDate:[null],
@@ -71,6 +75,22 @@ export class AddTasksComponent {
       next: response => this.taskStatus= response,
       error: error => console.log(error),
       complete: () => console.log(this.taskStatus)
+    })
+  }
+
+  getUser(){
+    this.http.get('https://localhost:5001/api/user/GetUsers').subscribe({
+      next: response => this.users= response,
+      error: error => console.log(error),
+   
+    })
+  }
+
+  getUserRoles(){
+    this.http.get('https://localhost:5001/api/user/GetUserRoles').subscribe({
+      next: response => this.roles= response,
+      error: error => console.log(error),
+    
     })
   }
 

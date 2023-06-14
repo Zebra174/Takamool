@@ -52,12 +52,7 @@ namespace API.Controllers
             return await _context.Users.AnyAsync(x => x.Username == title);
         }
         
-          [HttpGet("GetUserRoles")]
-        public async Task<ActionResult> GetUserRoles()
-        {
-            var usersRoles = await _context.IsuuesLokupTables.Where(x=>x.LokupType==5).ToListAsync();
-            return Ok(usersRoles);
-        }
+
 
           [HttpDelete("DeleteUser/{id}")]
          public async Task<ActionResult> DeleteUser(int id)
@@ -81,6 +76,44 @@ namespace API.Controllers
             }
 
 
+        }
+
+
+           [HttpGet("GetIssueTypes")]
+        public async Task<ActionResult> GetIssueTypes()
+        {
+            var usersRoles = await _context.IsuuesLokupTables.Where(x=>x.LokupType==1).ToListAsync();
+            return Ok(usersRoles);
+        }
+
+        
+           [HttpGet("GetIssueStatus")]
+        public async Task<ActionResult> GetIssueStatus()
+        {
+            var usersRoles = await _context.IsuuesLokupTables.Where(x=>x.LokupType==2).ToListAsync();
+            return Ok(usersRoles);
+        }
+
+          [HttpGet("GetContractType")]
+        public async Task<ActionResult> GetContractType()
+        {
+            var usersRoles = await _context.IsuuesLokupTables.Where(x=>x.LokupType==3).ToListAsync();
+            return Ok(usersRoles);
+        }
+
+        
+          [HttpGet("GetServiceType")]
+        public async Task<ActionResult> GetServiceType()
+        {
+            var usersRoles = await _context.IsuuesLokupTables.Where(x=>x.LokupType==4).ToListAsync();
+            return Ok(usersRoles);
+        }
+
+           [HttpGet("GetUserRoles")]
+        public async Task<ActionResult> GetUserRoles()
+        {
+            var usersRoles = await _context.IsuuesLokupTables.Where(x=>x.LokupType==5).ToListAsync();
+            return Ok(usersRoles);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

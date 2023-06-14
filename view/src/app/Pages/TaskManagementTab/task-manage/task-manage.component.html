@@ -17,7 +17,7 @@
            <div class="col-8 derasaSearch">
                <form action="" class="inline">
                    <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
-                   <input type="text" class=" form-control form-control-lg" placeholder="البحث برقم الدراسة" [(ngModel)]="searchText" name="agenceName" >
+                   <input type="text" class=" form-control form-control-lg" placeholder="البحث برقم المهمة" [(ngModel)]="searchText" name="agenceName" >
                </form>
            </div>
         </div>
@@ -33,7 +33,7 @@
                     <th><img class="ms-1" src="/assets/vectors/calendar.png" alt="calendar"> من تاريخ</th>
                     <th ><img class="ms-1" src="/assets/vectors/calendar.png" alt="calendar"> الي تاريخ</th>
                     <th>حالة القضية</th>
-                    <th>حالة المهمة</th>
+                    <th>التفدم %</th>
                   </tr>
                 </thead>
              
@@ -47,7 +47,7 @@
                     <td>{{task.projectedStart | date : "longDate"}}</td>
                     <td>{{task.projectedEnd | date:"longDate"}} </td>
                     <td >حالة المهمة <br><span [ngClass]="getStatusesClass(task.taskStatus)" class="badge rounded-pill  statusPill me-2"><p class="text-center mt-2">{{task.lokupValue}}</p> </span></td>
-                    <td>حالة القضية <br><span class="badge rounded-pill bg-primary-custom statusPill me-2"><p class="text-center mt-2">بدأت</p> </span></td>
+                    <td>التقدم %<br><span class="badge rounded-pill bg-primary-custom statusPill me-2"><p class="text-center mt-2">{{task.taskProgress}}</p> </span></td>
                    
                   </tr>
                 </tbody>

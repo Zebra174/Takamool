@@ -17,17 +17,17 @@
     <div class="row mt-3 px-5">
         <h4 class="mb-3">ملفات نوع القضية</h4>
         <div class="col-3 derasaSearch">
-            <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز القضية">
+            <form action="" class="inline" >
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز القضية"  [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع القضية">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع القضية"  [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-5">
-            <button id="addQadyia" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة قضية </button>
+            <button id="addQadyia" class="btn addBtn" ><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة نوع قضية </button>
         </div>
     </div>
 
@@ -36,53 +36,28 @@
             <thead>
                 <tr>
                     <th>رمز القضية</th>
-                    <th>اسم العميل</th>
+                    <th>نوع القضية</th>
                     <th>تعديل البيانات</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>أحمد سمير</td>
+                <tr *ngFor="let it of issueType | searchFilter: searchText">
+                    <td>{{it.lokupId}}</td>
+                    <td>{{it.lokupValue}}</td>
                     <td class="text-center">
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
                                 src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <ng-template #template>
+                                  <div class="modal-body text-center">
+                                    <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                                    <button type="button" class="btn btn-danger" (click)="deleteUser(it.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                                  </div>
+                             </ng-template>
                     </td>
 
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>مها القحطاني</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>مها القحطاني</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>محمد حسن</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-              
             </tbody>
         </table>
     </div>
@@ -93,12 +68,12 @@
         <h4 class="mb-3">ملفات حالة القضية</h4>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز القضية">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز القضية" [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب حالة القضية">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب حالة القضية" [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-5">
@@ -111,51 +86,27 @@
             <thead>
                 <tr>
                     <th>رمز القضية</th>
-                    <th>اسم العميل</th>
+                    <th>حالة القضية</th>
                     <th>تعديل البيانات</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>أحمد سمير</td>
+                <tr  *ngFor="let is of issueStatus | searchFilter: searchText">
+                    <td>{{is.lokupId}}</td>
+                    <td>{{is.lokupValue}}</td>
                     <td class="text-center">
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
                                 src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <ng-template #template>
+                                  <div class="modal-body text-center">
+                                    <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                                    <button type="button" class="btn btn-danger" (click)="deleteUser(is.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                                  </div>
+                             </ng-template>
                     </td>
 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>مها القحطاني</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>مها القحطاني</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>محمد حسن</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
                 </tr>
               
             </tbody>
@@ -168,12 +119,12 @@
         <h4 class="mb-3">أنواع العقد</h4>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز العقد">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز العقد"  [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع العقد">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع العقد"  [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-5">
@@ -191,37 +142,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>سنوي</td>
+                <tr *ngFor="let ct of contractType | searchFilter: searchText">
+                    <td>{{ct.lokupId}}</td>
+                    <td>{{ct.lokupValue}}</td>
                     <td class="text-center">
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
                                 src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <ng-template #template>
+                                  <div class="modal-body text-center">
+                                    <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                                    <button type="button" class="btn btn-danger" (click)="deleteUser(ct.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                                  </div>
+                             </ng-template>
                     </td>
 
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>شهري</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>عدد استشارات</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
+               
             </tbody>
         </table>
     </div>
@@ -232,12 +170,12 @@
         <h4 class="mb-3">الخدمات</h4>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز الخدمة">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز الخدمة"  [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-3 derasaSearch">
             <form action="" class="inline">
-                <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع الخدمة">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب نوع الخدمة"  [(ngModel)]="searchText" name="agenceName">
             </form>
         </div>
         <div class="col-5">
@@ -255,45 +193,71 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>إستشارة كتابية</td>
+                <tr *ngFor="let st of serviceType | searchFilter: searchText">
+                    <td>{{st.lokupId}}</td>
+                    <td>{{st.lokupValue}}</td>
                     <td class="text-center">
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
                                 src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <ng-template #template>
+                                  <div class="modal-body text-center">
+                                    <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                                    <button type="button" class="btn btn-danger" (click)="deleteUser(st.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                                  </div>
+                             </ng-template>
                     </td>
 
                 </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="box mt-5">
+    <div class="row mt-3 px-5">
+        <h4 class="mb-3">المستخدمين</h4>
+        <div class="col-3 derasaSearch">
+            <form action="" class="inline">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب رمز المستخدم"  [(ngModel)]="searchText" name="agenceName">
+            </form>
+        </div>
+        <div class="col-3 derasaSearch">
+            <form action="" class="inline">
+                <input type="text" class=" form-control form-control-lg" placeholder="اكتب صلحيةالمستخدم"  [(ngModel)]="searchText" name="agenceName">
+            </form>
+        </div>
+        <div class="col-5">
+            <button id="addService" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة صلحية جديدة</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered text-center">
+            <thead>
                 <tr>
-                    <td>2</td>
-                    <td>إستشارة حضورية</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
+                    <th>رمز المستخدم</th>
+                    <th>صلحية المستخدم</th>
+                    <th>تعديل البيانات</th>
                 </tr>
-                <tr>
-                    <td>3</td>
-                    <td>متابعة دورية</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ur of userRoles | searchFilter: searchText">
+                    <td>{{ur.lokupId}}</td>
+                    <td>{{ur.lokupValue}}</td>
                     <td class="text-center">
                         <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
                                 src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>طلب دراسة قضية مفصلة</td>
-                    <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                        <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img
-                                src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                                <ng-template #template>
+                                  <div class="modal-body text-center">
+                                    <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                                    <button type="button" class="btn btn-danger" (click)="deleteUser(ur.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                                  </div>
+                             </ng-template>
                     </td>
                 </tr>
             </tbody>

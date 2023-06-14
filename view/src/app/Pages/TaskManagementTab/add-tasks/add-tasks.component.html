@@ -8,9 +8,7 @@
                     <select [class.is-invalid]="addTaskForm.get('empName')?.errors" formControlName="empName"
                         id="clientName" class="form-select form-select-lg">
                         <option selected>اختر اسم الموظف </option>
-                        <option value="amr">amr</option>
-                        <option value="ahmed">ahmed</option>
-                        <option value="khaled">khaled</option>
+                        <option *ngFor="let user of users" value="{{user.name}}">{{user.name}}</option>
                     </select>
                     <div class="invalid-feedback">برجاء اختيار اسم الموظف</div>
                 </div>
@@ -53,13 +51,11 @@
                 </div>
 
                 <div class="form-group col-6">
-                    <label for="projectManager">مدير المشروع </label>
+                    <label for="projectManager">الوظيفة</label>
                     <select [class.is-invalid]="addTaskForm.get('projManger')?.errors" formControlName="projManger"
                         id="projectManager" class="form-select form-select-lg">
-                        <option selected>مدير المشروع </option>
-                        <option value="أحمد جمال">أحمد جمال</option>
-                        <option value="محمد دياب">محمد دياب</option>
-                        <option value="يوسف محمد">يوسف محمد</option>
+                        <option selected>الوظيفة</option>
+                        <option *ngFor="let role of roles" value="{{role.lokupId}}">{{role.lokupValue}}</option>
                     </select>
                   
                 </div>
@@ -81,6 +77,6 @@
 
             </div>
         </form>
-        <h3>form value : {{addTaskForm.value | json}}</h3>
-        <h3>form status : {{addTaskForm.status | json}}</h3> 
+        <!-- <h3>form value : {{addTaskForm.value | json}}</h3>
+        <h3>form status : {{addTaskForm.status | json}}</h3>  -->
     </div>
