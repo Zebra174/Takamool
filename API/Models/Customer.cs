@@ -18,6 +18,6 @@ public partial class Customer
 
     public string? CustMobile { get; set; }
 
-[Key]
+    [Key]
     public int CustId { get; set; }
 }

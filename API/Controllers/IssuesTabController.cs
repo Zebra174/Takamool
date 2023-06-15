@@ -324,6 +324,59 @@ namespace API.Controllers
 
         }
 
+
+        //------------------------------------------------------------------------------
+
+           [HttpGet("GetConsulting")]
+        public async Task<ActionResult> GetConsulting()
+        {
+            var Consulting = await (from a in _context.Consultings
+                   join b in _context.Customers
+            on a.CustomerId equals b.CustId
+                   join k in _context.IsuuesLokupTables on a.ConstType equals k.LokupId
+                   where k.LokupType == 4
+                   select new { k.LokupValue, b.CustName,a.ConstSubject,a.ConstType,a.Result,a.ConsuultingId}).ToListAsync();
+            return Ok(Consulting);
+        }
+
+
+          [HttpPost("AddConsulting")]
+        public async Task<ActionResult> AddConsulting([FromBody] Consulting consulting)
+        {
+            var constult = await _context.Consultings.SingleOrDefaultAsync(x => x.ConsuultingId == consulting.ConsuultingId);
+
+                await _context.Consultings.AddAsync(consulting);
+                await _context.SaveChangesAsync();
+
+            
+            return Ok(true);
+        }
+
+   [HttpDelete("DeleteConsulting/{id}")]
+        public async Task<ActionResult> DeleteConsulting(int id)
+        {
+
+            try
+            {
+                var consult = await _context.Consultings.FirstOrDefaultAsync(o => o.ConsuultingId == id);
+                if (consult == null)
+                {
+                    return NotFound($"Issue with Id = {id} not found");
+                }
+                _context.Remove(consult);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+               "Error deleting Issue");
+            }
+
+
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

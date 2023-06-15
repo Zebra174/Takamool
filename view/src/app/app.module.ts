@@ -36,6 +36,7 @@ import { AddSessionComponent } from './SubPages/StudiesTab/add-session/add-sessi
 import { SessionsReportComponent } from './Pages/Reports/sessions-report/sessions-report.component';
 import { CustomersReportComponent } from './Pages/Reports/customers-report/customers-report.component';
 import { ServicesReportComponent } from './Pages/Reports/services-report/services-report.component';
+import { AddConsultingComponent } from './SubPages/StudiesTab/add-consulting/add-consulting.component';
 
 
 
@@ -69,6 +70,7 @@ import { ServicesReportComponent } from './Pages/Reports/services-report/service
     SessionsReportComponent,
     CustomersReportComponent,
     ServicesReportComponent,
+    AddConsultingComponent,
 
   ],
   imports: [

@@ -23,6 +23,8 @@ public partial class LawerDataContext : DbContext
 
     public virtual DbSet<ClientMngt> ClientMngts { get; set; }
 
+    public virtual DbSet<Consulting> Consultings { get; set; }
+
     public virtual DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<Expense> Expenses { get; set; }
@@ -76,9 +78,9 @@ public partial class LawerDataContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            
-        }
+     {
+
+     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<BillingGroup>(entity =>
@@ -222,6 +224,23 @@ public partial class LawerDataContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("Why_referred");
             entity.Property(e => e.WorkerNumber).HasColumnName("Worker_Number");
+        });
+
+        modelBuilder.Entity<Consulting>(entity =>
+        {
+            entity.HasKey(e => e.ConsuultingId).HasName("PK__Consulti__CF75237FD6B3C84D");
+
+            entity.ToTable("Consulting");
+
+            entity.Property(e => e.ConsuultingId).HasColumnName("consuultingID");
+            entity.Property(e => e.ConstSubject)
+                .HasMaxLength(255)
+                .HasColumnName("constSubject");
+            entity.Property(e => e.ConstType).HasColumnName("constType");
+            entity.Property(e => e.CustomerId).HasColumnName("customerID");
+            entity.Property(e => e.Result)
+                .HasMaxLength(255)
+                .HasColumnName("result");
         });
 
         modelBuilder.Entity<Customer>(entity =>
@@ -551,7 +570,7 @@ public partial class LawerDataContext : DbContext
         modelBuilder.Entity<IsuuesAgency>(entity =>
         {
             entity
-               
+              
                 .ToTable("Isuues_Agencies");
 
             entity.Property(e => e.AgenceDate).HasColumnType("datetime");

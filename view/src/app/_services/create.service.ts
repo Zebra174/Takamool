@@ -18,6 +18,10 @@ export class CreateService {
     return this.http.post(this.baseUrl+'issuesTab/AddService',model);
   }
 
+  AddConsulting(model:any){
+    return this.http.post(this.baseUrl+'issuesTab/AddConsulting',model);
+  }
+
   AddSession(model:any){
     return this.http.post(this.baseUrl+'issuesTab/AddSession',model);
   }

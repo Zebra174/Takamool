@@ -21,6 +21,7 @@ import { AddSessionComponent } from './SubPages/StudiesTab/add-session/add-sessi
 import { SessionsReportComponent } from './Pages/Reports/sessions-report/sessions-report.component';
 import { ServicesReportComponent } from './Pages/Reports/services-report/services-report.component';
 import { CustomersReportComponent } from './Pages/Reports/customers-report/customers-report.component';
+import { AddConsultingComponent } from './SubPages/StudiesTab/add-consulting/add-consulting.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -43,7 +44,9 @@ const routes: Routes = [
 
   {path:'AddAgent',component:AddAgentsComponent},
   {path:'AddLegalServices',component:AddLegalServicesComponent},
+  {path:'AddConsulting',component:AddConsultingComponent},
   {path:'AddSession',component:AddSessionComponent},
+
 
 
   {path:'SessionsReport',component:SessionsReportComponent},

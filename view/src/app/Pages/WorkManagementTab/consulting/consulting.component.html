@@ -4,11 +4,18 @@
     <div class="row mt-3 px-5">
        <div class="col-3">
            <h4>عدد الإستشارات</h4>
-           <span class="badge rounded-pill">2 إستشارات</span>
+           <span class="badge rounded-pill"> إستشارات {{TotalConsutlings}}</span>
        </div>
+
+       <div class="col-4 derasaSearch">
+        <form action="" class="inline">
+            <a type="button"><img  src="/assets/vectors/searchCard.png" alt="searchBar"></a>
+            <input type="text" class=" form-control" placeholder="البحث برقم الاستشارة" [(ngModel)]="searchText" name="agenceName">
+        </form>
+    </div>
        
        <div class="col-5">
-           <button id="addNewConstulting" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة إستشارة جديدة</button>
+           <button id="addNewConstulting" class="btn addBtn"  routerLink="/AddConsulting"  routerLinkActive="active"><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة إستشارة جديدة</button>
        </div> 
     </div>
 
@@ -17,58 +24,28 @@
            <thead>
              <tr>
                <th>رقم الإستشارة</th>
-               <th>الإستشارات</th>
+               <th>اسم الإستشارة</th>
+               <th>نوع الاستشارة</th>
+               <th>اسم العميل</th>
                <th>تعديل البيانات</th>
              </tr>
            </thead>
            <tbody>
-             <tr>
-               <td>1</td>
-               <td>هنا كلام عن الإستشارة</td>
+             <tr *ngFor="let con of consultings | searchFilter: searchText">
+               <td>{{con.consuultingId}}</td>
+               <td>{{con.constSubject}}</td>
+               <td>{{con.lokupValue}}</td>
+               <td>{{con.custName}}</td>
                <td class="text-center">  
                    <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                   <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-               </td>
-              
-             </tr>
-             <tr>
-               <td>2</td>
-               <td>محمد حسن</td>
-               <td class="text-center">  
-                   <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                   <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-               </td>
-             </tr>
-             <tr>
-               <td>3</td>
-               <td>محمد حسن</td>
-               <td class="text-center">  
-                   <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                   <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-               </td>
-             </tr>
-             <tr>
-               <td>4</td>
-               <td>أحمد سمير</td>
-               <td class="text-center">  
-                   <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                   <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-               </td>
-             </tr>
-             <tr>
-               <td>5</td>
-               <td>أحمد سمير</td>
-               <td class="text-center">  
-                   <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                   <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
-               </td>
-             </tr>
-             <tr>
-               <td>6</td>
-               <td>محمد حسن</td>
-               <td class="text-center">  
-                   <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
-                   <a type="button" class="delete me-5" title="Edit" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                   <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
+                   <ng-template #template>
+                     <div class="modal-body text-center">
+                       <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
+                       <button type="button" class="btn btn-danger" (click)="deleteConsult(con.consuultingId)" >نعم انا متأكد !</button>
+                       <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
+                     </div>
+                   </ng-template>
                </td>
              </tr>
            </tbody>
