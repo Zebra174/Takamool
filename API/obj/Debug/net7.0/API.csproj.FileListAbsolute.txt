@@ -74,3 +74,4 @@ E:\hosam\Webtutorials\API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.
 E:\hosam\Webtutorials\API\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 E:\hosam\Webtutorials\API\bin\Debug\net7.0\Mono.TextTemplating.dll
 E:\hosam\Webtutorials\API\bin\Debug\net7.0\System.CodeDom.dll
+E:\hosam\Webtutorials\api\bin\Debug\net7.0\API.staticwebassets.runtime.json

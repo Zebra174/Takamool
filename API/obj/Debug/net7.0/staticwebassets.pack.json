@@ -1,0 +1,221 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\3rdpartylicenses.txt",
+      "PackagePath": "staticwebassets\\3rdpartylicenses.txt"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Frame 188.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Frame 188.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\HomeVector.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\HomeVector.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector (1).png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector (1).png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector (2).png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector (2).png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector (4).png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector (4).png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector (5).png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector (5).png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector (6).png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector (6).png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector (7).png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector (7).png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector-1.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector-1.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector-2.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector-2.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector-3.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector-3.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector-4.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector-4.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector-5.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector-5.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector-6.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector-6.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\Vector3.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\Vector3.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\abortIcon.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\abortIcon.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\addIcon.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\addIcon.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\calendar.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\calendar.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\card1.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\card1.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\card3.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\card3.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\deleteIcon.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\deleteIcon.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\done.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\done.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\downarrow.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\downarrow.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\editIcon.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\editIcon.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\frame2.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\frame2.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\frame3.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\frame3.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\frame4.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\frame4.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\frame5.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\frame5.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\logout.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\logout.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\notification.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\notification.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\outbtn.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\outbtn.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\saveIcon.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\saveIcon.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\search.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\search.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\searchCard.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\searchCard.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\assets\\vectors\\uparrow.png",
+      "PackagePath": "staticwebassets\\assets\\vectors\\uparrow.png"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\fontawesome-webfont.2b13baa7dd4f54c9.eot",
+      "PackagePath": "staticwebassets\\fontawesome-webfont.2b13baa7dd4f54c9.eot"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\fontawesome-webfont.8a7cb27d142e3e19.ttf",
+      "PackagePath": "staticwebassets\\fontawesome-webfont.8a7cb27d142e3e19.ttf"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\fontawesome-webfont.cf011583fb81df9f.woff",
+      "PackagePath": "staticwebassets\\fontawesome-webfont.cf011583fb81df9f.woff"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\fontawesome-webfont.da909aa098b0ee2d.svg",
+      "PackagePath": "staticwebassets\\fontawesome-webfont.da909aa098b0ee2d.svg"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\fontawesome-webfont.e9955780856cf8aa.woff2",
+      "PackagePath": "staticwebassets\\fontawesome-webfont.e9955780856cf8aa.woff2"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\main.92e9c0c0bcd9a4d3.js",
+      "PackagePath": "staticwebassets\\main.92e9c0c0bcd9a4d3.js"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\polyfills.170c54f179698c16.js",
+      "PackagePath": "staticwebassets\\polyfills.170c54f179698c16.js"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\runtime.7cdf68432a4f4b00.js",
+      "PackagePath": "staticwebassets\\runtime.7cdf68432a4f4b00.js"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\scripts.c94a4f00c87c99c6.js",
+      "PackagePath": "staticwebassets\\scripts.c94a4f00c87c99c6.js"
+    },
+    {
+      "Id": "E:\\hosam\\Webtutorials\\api\\wwwroot\\styles.e2aed86a2f94bc31.css",
+      "PackagePath": "staticwebassets\\styles.e2aed86a2f94bc31.css"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.API.props",
+      "PackagePath": "build\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.API.props",
+      "PackagePath": "buildMultiTargeting\\API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.API.props",
+      "PackagePath": "buildTransitive\\API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
