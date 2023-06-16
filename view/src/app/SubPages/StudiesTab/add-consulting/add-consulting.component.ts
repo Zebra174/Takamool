@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CreateService } from 'src/app/_services/create.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-consulting',
@@ -11,7 +12,7 @@ import { CreateService } from 'src/app/_services/create.service';
   styleUrls: ['./add-consulting.component.css']
 })
 export class AddConsultingComponent {
-
+  baseUrl =  environment.apiUrl;
   addConsultForm: FormGroup = new FormGroup({});
   choose1: string = 'اختر العميل';
   choose2: string = 'اختر نوع الاستشارة';
@@ -71,7 +72,7 @@ export class AddConsultingComponent {
 
   
   getConstType(){
-    this.http.get('https://localhost:5001/api/user/GetServiceType').subscribe({
+    this.http.get(this.baseUrl+'user/GetServiceType').subscribe({
       next: response => this.constTypes= response,
       error: error => console.log(error),
       complete: () => console.log(this.constTypes)
@@ -79,7 +80,7 @@ export class AddConsultingComponent {
   }
 
   getCustomers(){
-    this.http.get('https://localhost:5001/api/customer/GetCustomers').subscribe({
+    this.http.get(this.baseUrl+'customer/GetCustomers').subscribe({
       next: response => this.customers= response,
       error: error => console.log(error),
       complete: () => console.log(this.customers)

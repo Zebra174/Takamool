@@ -11,6 +11,7 @@ import { CreateService } from 'src/app/_services/create.service';
   styleUrls: ['./add-client-data.component.css']
 })
 export class AddClientDataComponent implements OnInit{
+  
   addCustomerForm: FormGroup = new FormGroup({});
   validationErrors:string[]  | undefined;
 

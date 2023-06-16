@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-sessions',
@@ -9,7 +10,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./sessions.component.css']
 })
 export class SessionsComponent {
-  title : string = 'القسم الخاص بالوكلات'
+
+  baseUrl =  environment.apiUrl;;
   sessions : any;
    modalRef!: BsModalRef ;
    message: string = "";
@@ -39,7 +41,7 @@ export class SessionsComponent {
 
   
    getSessions(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetSessionsTable').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetSessionsTable').subscribe({
       next: response => this.sessions = response,
       error : error => console.log(error),
       complete: () => this.TotalSessions
@@ -47,7 +49,7 @@ export class SessionsComponent {
    }
 
    getIssuesStatuses(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetIssueStatus').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetIssueStatus').subscribe({
       next: response => this.issuesStatuses= response,
       error: error => console.log(error),
       
@@ -55,7 +57,7 @@ export class SessionsComponent {
   }
 
   getAgenceType(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetAgenceType').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetAgenceType').subscribe({
       next: response => this.agenceType=response,
       error: error => console.log(error),
       complete: () => console.log("Request Done")
@@ -64,7 +66,7 @@ export class SessionsComponent {
 
    
    deleteSession(id:number) {
-    this.http.delete('https://localhost:5001/api/issuesTab/DeleteSession/'+id).subscribe({
+    this.http.delete(this.baseUrl+'issuesTab/DeleteSession/'+id).subscribe({
       next: () =>this.modalRef.hide()  ,
       error : error => {
         this.toastr.error(error.error),

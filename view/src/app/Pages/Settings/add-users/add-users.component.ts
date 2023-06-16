@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CreateService } from 'src/app/_services/create.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-users',
@@ -11,7 +12,7 @@ import { CreateService } from 'src/app/_services/create.service';
   styleUrls: ['./add-users.component.css']
 })
 export class AddUsersComponent implements OnInit {
-
+  baseUrl =  environment.apiUrl;
   addUserForm: FormGroup = new FormGroup({});
   choose1: string = 'اختر صلحية المستخدم';
   validationErrors:string[]  | undefined;
@@ -69,7 +70,7 @@ export class AddUsersComponent implements OnInit {
   }
 
   getRoles(){
-    this.http.get('https://localhost:5001/api/user/GetUserRoles').subscribe({
+    this.http.get(this.baseUrl+'user/GetUserRoles').subscribe({
       next: response => this.userTypes= response,
       error: error => console.log(error),
       complete: () => console.log(this.userTypes)

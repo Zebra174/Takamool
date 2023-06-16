@@ -53,9 +53,7 @@
                     <select  [class.is-invalid]="addServiceForm.get('customerId')?.errors" 
                     formControlName="customerId" id="ClientName" class=" form-select form-select-lg">
                         <option selected>اختر العميل</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option *ngFor="let cust of customers" value="{{cust.custId}}">{{cust.custName}}</option>
                     </select>
                     <div class="invalid-feedback">برجاء اختيار العميل </div>
                 </div>

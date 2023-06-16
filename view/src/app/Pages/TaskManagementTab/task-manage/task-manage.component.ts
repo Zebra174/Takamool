@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-task-manage',
@@ -9,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./task-manage.component.css']
 })
 export class TaskManageComponent {
+  baseUrl =  environment.apiUrl;
   title : string = 'القسم الخاص بالوكلات'
   tasks : any;
    modalRef!: BsModalRef ;
@@ -28,7 +30,7 @@ export class TaskManageComponent {
    }
   
    getTaskValues(){
-    this.http.get('https://localhost:5001/api/task/GetTaskTableValues').subscribe({
+    this.http.get(this.baseUrl+'task/GetTaskTableValues').subscribe({
       next: response => this.tasks = response,
       error : error => console.log(error),
       complete: () => this.TotalTasks
@@ -46,8 +48,10 @@ export class TaskManageComponent {
         }
    }
 
+   
+
   getTaskStatus(){
-    this.http.get('https://localhost:5001/api/task/GetTaskStatus').subscribe({
+    this.http.get(this.baseUrl+'task/GetTaskStatus').subscribe({
       next: response => this.taskStatus=response,
       error: error => console.log(error),
       complete: () => console.log("Request Done")

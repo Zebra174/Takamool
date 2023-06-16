@@ -40,7 +40,7 @@
               <td> <img src={{data.agencePic}}> {{data.lokupValue}} </td>
            
               <td class="text-center">  
-                <a type="button" class="edit " title="Edit" data-toggle="tooltip"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                <a type="button" class="edit " title="Edit" data-toggle="tooltip"  [routerLink]="['/EditAgent',data.agenceId]"  routerLinkActive="active"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
                 <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                 <ng-template #template>
                   <div class="modal-body text-center">

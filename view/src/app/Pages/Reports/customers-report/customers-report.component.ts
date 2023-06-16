@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-customers-report',
@@ -9,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./customers-report.component.css']
 })
 export class CustomersReportComponent implements OnInit {
+  baseUrl =  environment.apiUrl;
   modalRef!: BsModalRef ;
   message: string = "";
   searchText:string ="";
@@ -35,7 +37,7 @@ export class CustomersReportComponent implements OnInit {
 
  
   getUsers(){
-   this.http.get('https://localhost:5001/api/user/GetUsers').subscribe({
+   this.http.get(this.baseUrl+'user/GetUsers').subscribe({
      next: response => this.users = response,
      error : error => console.log(error),
      complete: () => this.TotalUsers
@@ -45,7 +47,7 @@ export class CustomersReportComponent implements OnInit {
   
 
  getAgenceType(){
-   this.http.get('https://localhost:5001/api/issuesTab/GetAgenceType').subscribe({
+   this.http.get(this.baseUrl+'issuesTab/GetAgenceType').subscribe({
      next: response => this.agenceType=response,
      error: error => console.log(error),
      complete: () => console.log("Request Done")
@@ -54,7 +56,7 @@ export class CustomersReportComponent implements OnInit {
 
   
   deleteUser(id:number) {
-   this.http.delete('https://localhost:5001/api/user/DeleteUser/'+id).subscribe({
+   this.http.delete(this.baseUrl+'user/DeleteUser/'+id).subscribe({
      next: () =>this.modalRef.hide()  ,
      error : error => {
        this.toastr.error(error.error),

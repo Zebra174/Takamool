@@ -1,0 +1,73 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>تعديل جلسة جديدة</h4>
+
+        <form #form="ngForm" (ngSubmit)="updateSession(session.sessionId)">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="caseNo">رقم القضية <span>*</span></label>
+                    <select  [(ngModel)]="session.aisuueNumber" name="aisuueNumber"  id="CaseNo" class="form-select form-select-lg">
+                        <option *ngFor="let issue of issues" 
+                        value="{{issue.isuuenumber}}"
+                        [attr.selected]="session.aisuueNumber==issue.isuuenumber ? true : null"
+                        >{{issue.isuueSubject}}</option> 
+                    </select>
+                </div>
+                <div class="form-group col-6">
+                    <label for="Session">تعريف الجلسة</label>
+                    <input [(ngModel)]="session.sessionName" name="sessionName"
+                     type="text" class="form-control  form-control-lg" id="Session" placeholder="من فضلك اكتب عن تعريف الجلسة">
+                </div>
+               
+             
+                <div class="form-group col-6">
+                    <label for="sessionNO">ملخص الجلسة</label>
+                    <input [(ngModel)]="session.sessionNote" name="sessionNote"
+                     type="text" class="form-control  form-control-lg" id="sessionNO" placeholder="من فضلك اكتب ملخص للجلسة">
+                </div>
+
+                <div class="form-group col-6">
+                    <label for="sessionDate">تاريخ الجلسة <span>*</span></label>
+                    <input  [ngModel]="session.sessionDate | date:'yyyy-MM-dd'" name="sessionDate" (ngModelChange)="session.sessionDate=$event"
+                     type="date" class="form-control  form-control-lg" id="sessionDate" placeholder="يوم/شهر/سنة"
+                        style="background-color: #F5F5F5;">
+                </div>
+                <div class="form-group col-6">
+                    <label for="qadyiaNumber">القاضي</label>
+                    <input
+                     type="text" class="form-control  form-control-lg" id="judge" placeholder="من فضلك ادخل اسم القاضي">
+                </div>
+                <div class="form-group col-6">
+                    <label for="nextSession">اسم الجلسة القادمة</label>
+                    <input [(ngModel)]="session.sessionNextName" name="sessionNextName"
+                     type="text" class="form-control  form-control-lg" id="nextSession" placeholder="من فضلك ادخل اسم الجلسة القادمة">
+                </div>
+                <div class="form-group col-6">
+                    <label for="nextSessionDate">تاريخ الجلسة القادمة</label>
+                    <input [ngModel]="session.sessionNextDate | date:'yyyy-MM-dd'" name="sessionNextDate" (ngModelChange)="session.sessionNextDate=$event"
+                     type="date" class="form-control  form-control-lg" id="nextSessionDate" placeholder="يوم/شهر/سنة"
+                        style="background-color: #F5F5F5;">
+                </div>
+                 
+                      
+                
+                    <div class="form-group form-check">
+                        <label  style="background-color: #F5F5F5;" class="form-check-label" for="defaultCheck1"> هل ترغب في دعوة العميل؟</label>
+                        <input [(ngModel)]="session.customerInv" name="customerInv"
+                         class="form-check-input rounded-circle"  type="checkbox"  id="defaultCheck1">
+                    </div>
+              
+
+
+              <div class="form-group mt-5">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-lg submitBtn form-control"><img src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات الجلسة</button>
+                    </div>
+              </div>
+            </div>
+
+        </form>
+       
+    </div>
+
+</div>

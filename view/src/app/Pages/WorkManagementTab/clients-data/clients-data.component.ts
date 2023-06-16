@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-clients-data',
@@ -9,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./clients-data.component.css']
 })
 export class ClientsDataComponent {
+  baseUrl = environment.apiUrl;
   customers : any;
    modalRef!: BsModalRef ;
    message: string = "";
@@ -33,7 +35,7 @@ export class ClientsDataComponent {
 
   
    getCustomers(){
-    this.http.get('https://localhost:5001/api/customer/GetCustomers').subscribe({
+    this.http.get(this.baseUrl+'customer/GetCustomers').subscribe({
       next: response => this.customers = response,
       error : error => console.log(error),
       complete: () => this.TotalCustomers
@@ -42,7 +44,7 @@ export class ClientsDataComponent {
 
    
    deleteCustomer(id:number) {
-    this.http.delete('https://localhost:5001/api/customer/DeleteCustomer/'+id).subscribe({
+    this.http.delete(this.baseUrl+'customer/DeleteCustomer/'+id).subscribe({
       next: () =>this.modalRef.hide()  ,
       error : error => {
         this.toastr.error(error.error),

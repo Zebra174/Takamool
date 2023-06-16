@@ -27,7 +27,34 @@
             </form>
         </div>
         <div class="col-5">
-            <button id="addQadyia" class="btn addBtn" ><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة نوع قضية </button>
+            <button id="addQadyia" class="btn addBtn"  (click)="openModal(addTemplate)" ><img src="/assets/vectors/addIcon.png" alt="addIcon"> إضغط لإضافة نوع قضية </button>
+            <ng-template #addTemplate>
+                <div class="modal-body text-center">
+                    <form [formGroup]="addIssueTypeForm"  (ngSubmit)="AddIssueType()" autocomplete="off">
+                      
+                            <div class="form-group">
+                                <label for="Session">رمز القضية</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupId')?.errors" 
+                                formControlName="lokupId"
+                                 type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز القضية">
+                            </div>
+                            <div class="form-group me-2">
+                                <label for="sessionNO">نوع القضية</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupValue')?.errors" 
+                                formControlName="lokupValue"
+                                 type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب نوع القضية">
+                            </div>
+                           
+                            <div class="form-group me-2">
+                                   
+                                    <button type="submit" class="btn mt-3 me-5 btn-success" >اضافة</button>
+                                    <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                
+                          </div>
+                        
+                    </form>
+                </div>
+           </ng-template>
         </div>
     </div>
 
@@ -45,13 +72,39 @@
                     <td>{{it.lokupId}}</td>
                     <td>{{it.lokupValue}}</td>
                     <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip" (click)="openModal(editIssueTypeTemplate);getIT(it.lokupId)"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+
+                        <ng-template #editIssueTypeTemplate>
+                            <div class="modal-body text-center">
+                                <form #form="ngForm" (ngSubmit)="updateIssueType(it.lokupId)" autocomplete="off">
+                                  
+                                        <div class="form-group">
+                                            <label for="Session">رمز القضية</label>
+                                            <input disabled [(ngModel)]="its.lokupId" name="lokupId"
+                                             type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز القضية">
+                                        </div>
+                                        <div class="form-group me-2">
+                                            <label for="sessionNO">نوع القضية</label>
+                                            <input  [(ngModel)]="its.lokupValue" name="lokupValue"
+                                             type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب نوع القضية">
+                                        </div>
+                                       
+                                        <div class="form-group me-2">
+                                               
+                                                <button type="submit" class="btn mt-3 me-5 btn-success" >نعديل</button>
+                                                <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                            
+                                      </div>
+                                    
+                                </form>
+                            </div>
+                       </ng-template>
+
                                 <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                                 <ng-template #template>
                                   <div class="modal-body text-center">
                                     <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
-                                    <button type="button" class="btn btn-danger" (click)="deleteUser(it.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteIssueType(it.lokupId)" >نعم انا متأكد !</button>
                                     <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
                                   </div>
                              </ng-template>
@@ -77,7 +130,34 @@
             </form>
         </div>
         <div class="col-5">
-            <button id="addStatus" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة حالة لقضية</button>
+            <button id="addStatus" class="btn addBtn" (click)="openModal(addStatusTemplate)"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة حالة لقضية</button>
+            <ng-template #addStatusTemplate>
+                <div class="modal-body text-center">
+                    <form [formGroup]="addIssueTypeForm"  (ngSubmit)="AddIssueStatus()" autocomplete="off">
+                      
+                            <div class="form-group">
+                                <label for="Session">رمز القضية</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupId')?.errors" 
+                                formControlName="lokupId"
+                                 type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز القضية">
+                            </div>
+                            <div class="form-group me-2">
+                                <label for="sessionNO">حالة القضية</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupValue')?.errors" 
+                                formControlName="lokupValue"
+                                 type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب حالة القضية">
+                            </div>
+                           
+                            <div class="form-group me-2">
+                                   
+                                    <button type="submit" class="btn mt-3 me-5 btn-success" >اضافة</button>
+                                    <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                
+                          </div>
+                        
+                    </form>
+                </div>
+           </ng-template>
         </div>
     </div>
 
@@ -95,13 +175,40 @@
                     <td>{{is.lokupId}}</td>
                     <td>{{is.lokupValue}}</td>
                     <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                    
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip" (click)="openModal(editIssueStatusTemplate);getIS(is.lokupId)"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+
+                        <ng-template #editIssueStatusTemplate>
+                            <div class="modal-body text-center">
+                                <form #form="ngForm" (ngSubmit)="updateIssueStatus(is.lokupId)" autocomplete="off">
+                                  
+                                        <div class="form-group">
+                                            <label for="Session">رمز القضية</label>
+                                            <input disabled [(ngModel)]="its.lokupId" name="lokupId"
+                                             type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز القضية">
+                                        </div>
+                                        <div class="form-group me-2">
+                                            <label for="sessionNO">حالة القضية</label>
+                                            <input  [(ngModel)]="its.lokupValue" name="lokupValue"
+                                             type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب حالة القضية">
+                                        </div>
+                                       
+                                        <div class="form-group me-2">
+                                               
+                                                <button type="submit" class="btn mt-3 me-5 btn-success" >نعديل</button>
+                                                <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                            
+                                      </div>
+                                    
+                                </form>
+                            </div>
+                       </ng-template>
+
                                 <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                                 <ng-template #template>
                                   <div class="modal-body text-center">
                                     <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
-                                    <button type="button" class="btn btn-danger" (click)="deleteUser(is.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteIssueStatus(is.lokupId)" >نعم انا متأكد !</button>
                                     <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
                                   </div>
                              </ng-template>
@@ -128,7 +235,34 @@
             </form>
         </div>
         <div class="col-5">
-            <button id="addContract" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة نوع العقد</button>
+            <button id="addContract" class="btn addBtn" (click)="openModal(addContractTemplate)"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة نوع العقد</button>
+            <ng-template #addContractTemplate>
+                <div class="modal-body text-center">
+                    <form [formGroup]="addIssueTypeForm"  (ngSubmit)="AddContractType()" autocomplete="off">
+                      
+                            <div class="form-group">
+                                <label for="Session">رمز العقد</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupId')?.errors" 
+                                formControlName="lokupId"
+                                 type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز العقد">
+                            </div>
+                            <div class="form-group me-2">
+                                <label for="sessionNO">نوع العقد</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupValue')?.errors" 
+                                formControlName="lokupValue"
+                                 type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب نوع العقد">
+                            </div>
+                           
+                            <div class="form-group me-2">
+                                   
+                                    <button type="submit" class="btn mt-3 me-5 btn-success" >اضافة</button>
+                                    <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                
+                          </div>
+                        
+                    </form>
+                </div>
+           </ng-template>
         </div>
     </div>
 
@@ -146,13 +280,41 @@
                     <td>{{ct.lokupId}}</td>
                     <td>{{ct.lokupValue}}</td>
                     <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip" (click)="openModal(editContractTypeTemplate);getCT(ct.lokupId)"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+
+                        <ng-template #editContractTypeTemplate>
+                            <div class="modal-body text-center">
+                                <form #form="ngForm" (ngSubmit)="updateContractType(ct.lokupId)" autocomplete="off">
+                                  
+                                        <div class="form-group">
+                                            <label for="Session">رمز العقد</label>
+                                            <input disabled [(ngModel)]="its.lokupId" name="lokupId"
+                                             type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز العقد">
+                                        </div>
+                                        <div class="form-group me-2">
+                                            <label for="sessionNO">نوع العقد</label>
+                                            <input  [(ngModel)]="its.lokupValue" name="lokupValue"
+                                             type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب نوع العقد">
+                                        </div>
+                                       
+                                        <div class="form-group me-2">
+                                               
+                                                <button type="submit" class="btn mt-3 me-5 btn-success" >نعديل</button>
+                                                <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                            
+                                      </div>
+                                    
+                                </form>
+                            </div>
+                       </ng-template>
+ 
+
+
                                 <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                                 <ng-template #template>
                                   <div class="modal-body text-center">
                                     <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
-                                    <button type="button" class="btn btn-danger" (click)="deleteUser(ct.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteContractType(ct.lokupId)" >نعم انا متأكد !</button>
                                     <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
                                   </div>
                              </ng-template>
@@ -179,7 +341,34 @@
             </form>
         </div>
         <div class="col-5">
-            <button id="addService" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة الخدمة</button>
+            <button id="addService" class="btn addBtn" (click)="openModal(addServiceTemplate)"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة الخدمة</button>
+            <ng-template #addServiceTemplate>
+                <div class="modal-body text-center">
+                    <form [formGroup]="addIssueTypeForm"  (ngSubmit)="AddServiceType()" autocomplete="off">
+                      
+                            <div class="form-group">
+                                <label for="Session">رمز الخدمة</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupId')?.errors" 
+                                formControlName="lokupId"
+                                 type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز الخدمة">
+                            </div>
+                            <div class="form-group me-2">
+                                <label for="sessionNO">نوع الخدمة</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupValue')?.errors" 
+                                formControlName="lokupValue"
+                                 type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب نوع الخدمة">
+                            </div>
+                           
+                            <div class="form-group me-2">
+                                   
+                                    <button type="submit" class="btn mt-3 me-5 btn-success" >اضافة</button>
+                                    <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                
+                          </div>
+                        
+                    </form>
+                </div>
+           </ng-template>
         </div>
     </div>
 
@@ -197,13 +386,41 @@
                     <td>{{st.lokupId}}</td>
                     <td>{{st.lokupValue}}</td>
                     <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip" (click)="openModal(editContractTypeTemplate);getST(st.lokupId)"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+
+                        <ng-template #editContractTypeTemplate>
+                            <div class="modal-body text-center">
+                                <form #form="ngForm" (ngSubmit)="updateServiceType(st.lokupId)" autocomplete="off">
+                                  
+                                        <div class="form-group">
+                                            <label for="Session">رمز الخدمة</label>
+                                            <input disabled [(ngModel)]="its.lokupId" name="lokupId"
+                                             type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز الخدمة">
+                                        </div>
+                                        <div class="form-group me-2">
+                                            <label for="sessionNO">نوع الخدمة</label>
+                                            <input  [(ngModel)]="its.lokupValue" name="lokupValue"
+                                             type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب نوع الخدمة">
+                                        </div>
+                                       
+                                        <div class="form-group me-2">
+                                               
+                                                <button type="submit" class="btn mt-3 me-5 btn-success" >نعديل</button>
+                                                <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                            
+                                      </div>
+                                    
+                                </form>
+                            </div>
+                       </ng-template>
+ 
+
+
                                 <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                                 <ng-template #template>
                                   <div class="modal-body text-center">
                                     <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
-                                    <button type="button" class="btn btn-danger" (click)="deleteUser(st.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteServiceType(st.lokupId)" >نعم انا متأكد !</button>
                                     <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
                                   </div>
                              </ng-template>
@@ -230,7 +447,34 @@
             </form>
         </div>
         <div class="col-5">
-            <button id="addService" class="btn addBtn"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة صلحية جديدة</button>
+            <button id="addService" class="btn addBtn" (click)="openModal(addUserTemplate)"><img src="/assets/vectors/addIcon.png" alt="addIcon">إضغط لإضافة صلحية جديدة</button>
+            <ng-template #addUserTemplate>
+                <div class="modal-body text-center">
+                    <form [formGroup]="addIssueTypeForm"  (ngSubmit)="AddUserRoles()" autocomplete="off">
+                      
+                            <div class="form-group">
+                                <label for="Session">رمز المستخدم</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupId')?.errors" 
+                                formControlName="lokupId"
+                                 type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز المستخدم">
+                            </div>
+                            <div class="form-group me-2">
+                                <label for="sessionNO">صليحة المستخدم</label>
+                                <input [class.is-invalid]="addIssueTypeForm.get('lokupValue')?.errors" 
+                                formControlName="lokupValue"
+                                 type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب صلحية المستخدم">
+                            </div>
+                           
+                            <div class="form-group me-2">
+                                   
+                                    <button type="submit" class="btn mt-3 me-5 btn-success" >اضافة</button>
+                                    <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                
+                          </div>
+                        
+                    </form>
+                </div>
+           </ng-template>
         </div>
     </div>
 
@@ -248,13 +492,40 @@
                     <td>{{ur.lokupId}}</td>
                     <td>{{ur.lokupValue}}</td>
                     <td class="text-center">
-                        <a type="button" class="edit " title="Delete" data-toggle="tooltip"><img
-                                src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+                        <a type="button" class="edit " title="Delete" data-toggle="tooltip" (click)="openModal(editUserRoleTemplate);getUR(ur.lokupId)"><img src="/assets/vectors/editIcon.png" alt="editIcon"></a>
+
+                        <ng-template #editUserRoleTemplate>
+                            <div class="modal-body text-center">
+                                <form #form="ngForm" (ngSubmit)="updateUserRole(ur.lokupId)" autocomplete="off">
+                                  
+                                        <div class="form-group">
+                                            <label for="Session">رمز المستخدم</label>
+                                            <input disabled [(ngModel)]="its.lokupId" name="lokupId"
+                                             type="text" class="form-control" id="lokupId" placeholder="من فضلك ادخل رمز المستخدم">
+                                        </div>
+                                        <div class="form-group me-2">
+                                            <label for="sessionNO">صلحية المستخدم</label>
+                                            <input  [(ngModel)]="its.lokupValue" name="lokupValue"
+                                             type="text" class="form-control me-4 w-100 form-control"  id="lokupValue" placeholder="من فضلك اكتب صلحية المستخدم">
+                                        </div>
+                                       
+                                        <div class="form-group me-2">
+                                               
+                                                <button type="submit" class="btn mt-3 me-5 btn-success" >نعديل</button>
+                                                <button type="button" class="btn mt-3 me-3 btn-danger" (click)="decline()" >الغاء</button>
+                                            
+                                      </div>
+                                    
+                                </form>
+                            </div>
+                       </ng-template>
+ 
+                               
                                 <a type="button" class="delete me-5" title="Delete" (click)="openModal(template)" data-toggle="tooltip"><img src="/assets/vectors/deleteIcon.png" alt="deleteIcon"></a>
                                 <ng-template #template>
                                   <div class="modal-body text-center">
                                     <p>هل أنت متأكد من أنك تريد الحذف ؟</p>
-                                    <button type="button" class="btn btn-danger" (click)="deleteUser(ur.lokupId)" >نعم انا متأكد !</button>
+                                    <button type="button" class="btn btn-danger" (click)="deleteUserRole(ur.lokupId)" >نعم انا متأكد !</button>
                                     <button type="button" class="btn btn-default" (click)="decline()" >لا</button>
                                   </div>
                              </ng-template>

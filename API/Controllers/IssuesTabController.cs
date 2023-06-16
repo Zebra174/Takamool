@@ -29,13 +29,6 @@ namespace API.Controllers
             return Ok(agencies);
         }
 
-        [HttpGet("GetAgency/{id}")]
-        public async Task<ActionResult> GetAgency(int id)
-        {
-            var agency = await _context.IsuuesAgencies.FirstOrDefaultAsync(o => o.AgenceId == id);
-            return Ok(agency);
-        }
-
         [HttpPost("AddAgency")]
         public async Task<ActionResult> AddAgency([FromBody] IsuuesAgency lawer)
         {
@@ -55,6 +48,36 @@ namespace API.Controllers
 
             }
             return Ok(true);
+        }
+         [HttpGet("GetAgent/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetAgent(int id)
+        {
+           var agent = await _context.IsuuesAgencies.FirstOrDefaultAsync(o => o.AgenceId == id);
+            
+            if(agent == null) return NotFound($"Agency with Id = {id} not found");
+             
+            
+            return Ok(agent);
+        }
+
+         [HttpPut("UpdateAgent/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateAgent(long id ,[FromBody] IsuuesAgency lawer)
+        {
+           var agent = await _context.IsuuesAgencies.FindAsync(id);
+            
+            if(agent == null) return NotFound($"Agency with Id = {id} not found");
+            if (await AgenceNoExist(lawer.AgenceNo.ToString())) return BadRequest("رقم الوكالة موجود مسبقا");
+             agent.IsuueNumber = lawer.IsuueNumber;
+             agent.AgenceNo = lawer.AgenceNo;
+             agent.AgenceTo = lawer.AgenceTo;
+             agent.AgenceName = lawer.AgenceName;
+             agent.AgenceNote = lawer.AgenceNote;
+             agent.AgenceType = lawer.AgenceType;
+            
+            await _context.SaveChangesAsync();
+            return Ok(agent);
         }
 
         [HttpDelete("DeleteAgency/{id}")]
@@ -141,9 +164,9 @@ namespace API.Controllers
             on a.Isuuenumber equals b.IsuueNumber
                    join k in _context.IsuuesLokupTables on a.IsuueStatus equals k.LokupId
                    where k.LokupType == 2
-                   join l in _context.IsuuesLokupTables on a.IsuueType equals l.LokupId
+                   join l in _context.IsuuesLokupTables on b.AgenceType equals l.LokupId
                    where l.LokupType == 1
-                   select new { k.LokupValue, b.AgenceNo, b.AgenceName, b.AgenceTo, b.AgenceId, b.AgencePic , at= l.LokupValue}).ToListAsync();
+                   select new { k.LokupValue,b.AgenceType, b.AgenceNo, b.AgenceName, b.AgenceTo, b.AgenceId, b.AgencePic, at= l.LokupValue}).ToListAsync();
 
 
 
@@ -208,7 +231,7 @@ namespace API.Controllers
                    where k.LokupType == 2
                    join l in _context.IsuuesLokupTables on a.IsuueType equals l.LokupId
                    where l.LokupType == 1
-                   select new { k.LokupValue, a.Isuuenumber, b.CustName , at= l.LokupValue}).ToListAsync();
+                   select new { k.LokupValue, a.Isuuenumber , a.IsuueId, b.CustName , at= l.LokupValue}).ToListAsync();
             return Ok(issues);
         }
 
@@ -239,6 +262,49 @@ namespace API.Controllers
 
             }
             return Ok(true);
+        }
+
+
+          [HttpGet("GetIssue/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetIssue(int id)
+        {
+           var agent = await _context.Isuues.FirstOrDefaultAsync(o => o.IsuueId == id);
+            
+            if(agent == null) return NotFound($"Agency with Id = {id} not found");
+             
+            
+            return Ok(agent);
+        }
+
+         [HttpPut("UpdateIssue/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateIssue(long id ,[FromBody] Isuue isuue)
+        {
+           var issue = await _context.Isuues.FindAsync(id);
+            
+            if(issue == null) return NotFound($"Issue with Id = {id} not found");
+            
+             issue.IsuueSubject = isuue.IsuueSubject;
+             issue.Isuuenumber = isuue.Isuuenumber;
+             issue.IsuueOpenDate = isuue.IsuueOpenDate;
+             issue.ContractType = isuue.ContractType;
+             issue.IsuueType = isuue.IsuueType;
+             issue.CustomerId = isuue.CustomerId;
+             issue.IsseName = isuue.IsseName;
+             issue.CourtCity = isuue.CourtCity;
+             issue.CourtCircle = isuue.CourtCircle;
+             issue.CustomerType = isuue.CustomerType;
+             issue.IsuueSummary = isuue.IsuueSummary;
+             issue.IsuueDetail = isuue.IsuueDetail;
+             issue.LowerName = isuue.LowerName;
+             issue.ContractNumber = isuue.ContractNumber;
+             issue.AgnName = isuue.AgnName;
+             issue.Agnaddress = isuue.Agnaddress;
+             issue.Agnphone = isuue.Agnphone;
+
+            await _context.SaveChangesAsync();
+            return Ok(issue);
         }
 
           [HttpDelete("DeleteIssue/{id}")]
@@ -300,6 +366,39 @@ namespace API.Controllers
             return Ok(true);
         }
 
+         [HttpGet("GetSession/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetSession(int id)
+        {
+           var session = await _context.IsuuesSessions.FirstOrDefaultAsync(o => o.SessionId == id);
+            
+            if(session == null) return NotFound($"session with Id = {id} not found");
+             
+            
+            return Ok(session);
+        }
+
+             [HttpPut("UpdateSession/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateSession(long id ,[FromBody] IsuuesSession ses)
+        {
+           var session = await _context.IsuuesSessions.FindAsync(id);
+            
+            if(session == null) return NotFound($"session with Id = {id} not found");
+          
+             session.AisuueNumber = ses.AisuueNumber;
+             session.SessionName = ses.SessionName;
+             session.SessionNote = ses.SessionNote;
+             session.SessionDate = ses.SessionDate;
+             session.SessionNextName = ses.SessionNextName;
+             session.SessionNextDate = ses.SessionNextDate;
+             session.CustomerInv = ses.CustomerInv;
+
+            await _context.SaveChangesAsync();
+            return Ok(session);
+        }
+
+
    [HttpDelete("DeleteSession/{id}")]
         public async Task<ActionResult> DeleteSession(int id)
         {
@@ -350,6 +449,35 @@ namespace API.Controllers
 
             
             return Ok(true);
+        }
+
+          [HttpGet("GetConsulting/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetConsulting(int id)
+        {
+           var consulting = await _context.Consultings.FirstOrDefaultAsync(o => o.ConsuultingId == id);
+            
+            if(consulting == null) return NotFound($"consulting with Id = {id} not found");
+             
+            
+            return Ok(consulting);
+        }
+
+             [HttpPut("UpdateConsulting/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateConsulting(int id ,[FromBody] Consulting consult)
+        {
+           var consulting = await _context.Consultings.FindAsync(id);
+
+            if(consulting == null) return NotFound($"consulting with Id = {id} not found");
+          
+             consulting.ConstType = consult.ConstType;
+             consulting.ConstSubject = consult.ConstSubject;
+             consulting.CustomerId = consult.CustomerId;
+             consulting.Result = consult.Result;
+
+            await _context.SaveChangesAsync();
+            return Ok(consulting);
         }
 
    [HttpDelete("DeleteConsulting/{id}")]

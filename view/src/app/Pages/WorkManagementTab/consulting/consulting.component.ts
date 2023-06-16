@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-consulting',
@@ -9,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./consulting.component.css']
 })
 export class ConsultingComponent {
+  baseUrl =  environment.apiUrl;
   consultings : any;
    modalRef!: BsModalRef ;
    message: string = "";
@@ -32,7 +34,7 @@ export class ConsultingComponent {
 
   
    getConsultings(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetConsulting').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetConsulting').subscribe({
       next: response => this.consultings = response,
       error : error => console.log(error),
       complete: () => this.TotalConsutlings
@@ -42,7 +44,7 @@ export class ConsultingComponent {
 
    
    deleteConsult(id:number) {
-    this.http.delete('https://localhost:5001/api/issuesTab/DeleteConsulting/'+id).subscribe({
+    this.http.delete(this.baseUrl+'issuesTab/DeleteConsulting/'+id).subscribe({
       next: () =>this.modalRef.hide()  ,
       error : error => {
         this.toastr.error(error.error),

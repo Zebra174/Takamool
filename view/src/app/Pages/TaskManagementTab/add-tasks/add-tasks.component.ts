@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CreateService } from 'src/app/_services/create.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-tasks',
@@ -11,6 +12,7 @@ import { CreateService } from 'src/app/_services/create.service';
   styleUrls: ['./add-tasks.component.css']
 })
 export class AddTasksComponent {
+  baseUrl =  environment.apiUrl;
   addTaskForm: FormGroup = new FormGroup({});
   choose1: string = 'اختر نوع الحالة';
   choose3: string = 'الوظيفة';
@@ -71,7 +73,7 @@ export class AddTasksComponent {
   }
 
   getStatuses(){
-    this.http.get('https://localhost:5001/api/task/GetStatuses').subscribe({
+    this.http.get(this.baseUrl+'task/GetStatuses').subscribe({
       next: response => this.taskStatus= response,
       error: error => console.log(error),
       complete: () => console.log(this.taskStatus)
@@ -79,7 +81,7 @@ export class AddTasksComponent {
   }
 
   getUser(){
-    this.http.get('https://localhost:5001/api/user/GetUsers').subscribe({
+    this.http.get(this.baseUrl+'user/GetUsers').subscribe({
       next: response => this.users= response,
       error: error => console.log(error),
    
@@ -87,7 +89,7 @@ export class AddTasksComponent {
   }
 
   getUserRoles(){
-    this.http.get('https://localhost:5001/api/user/GetUserRoles').subscribe({
+    this.http.get(this.baseUrl+'user/GetUserRoles').subscribe({
       next: response => this.roles= response,
       error: error => console.log(error),
     

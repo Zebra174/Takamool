@@ -1,0 +1,77 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>نعديل بيانات الوكالة </h4>
+
+        <form #form="ngForm" (ngSubmit)="updateAgent(agent.agenceId)">
+            <div class="row">
+
+                <div class="form-group col-6">
+                    <label for="case">نوع القضية<span>*</span></label>
+                    <select  [(ngModel)]="agent.isuueNumber" name="isuueNumber"  id="Case" class="form-select form-select-lg">
+                        <option *ngFor="let issue of issues" 
+                        value="{{issue.isuuenumber}}"
+                        [attr.selected]="agent.isuueNumber==issue.isuueSubject ? true : null"
+                        >{{issue.isuueSubject}}</option> 
+                    </select>
+                    <div class="invalid-feedback">برجاء اختيار نوع القضية</div>
+                </div>
+                  
+            
+              
+                <div class="form-group col-6">
+                    <label for="AgenceNo">رقم التوكيل <span>*</span></label>
+                    <input [(ngModel)]="agent.agenceNo" name="agenceNo" type="text" class="form-control  form-control-lg" id="IssueNo"
+                        placeholder="من فضلك ادخل رقم التوكيل">
+                        <div class="invalid-feedback">برجاء ادخال رقم التوكيل</div>
+                </div>
+              
+                <div class="form-group col-6">
+                    <label for="agentDeadline">نهاية التوكيل <span>*</span></label>
+                    <input  [ngModel]="agent.agenceTo | date:'yyyy-MM-dd'" name="agenceTo" (ngModelChange)="agent.agenceTo=$event" type="date"  class="form-control  form-control-lg" id="agentDeadline"
+                        placeholder="يوم/شهر/سنة" style="background-color: #F5F5F5;">
+                        <div class="invalid-feedback"> برجاء اختير  نهاية التوكيل</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="AgenceName">اسم الوكيل <span>*</span></label>
+                    <input  [(ngModel)]="agent.agenceName" name="agenceName" type="text" class="form-control  form-control-lg" id="QadyiaNumber"
+                        placeholder="من فضلك ادخل اسم الوكيل ">
+                        <div class="invalid-feedback"> برجاء ادخال  اسم الوكيل</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="AgenceNote">ملخص التوكيل</label>
+                    <input [(ngModel)]="agent.agenceNote" name="agenceNote"  type="text" class="form-control  form-control-lg" id="QadyiaNumber"
+                        placeholder="من فضلك ادخل ملخص الوكيل">    
+                </div>
+                <div class="form-group col-6">
+                    <label for="case">تصنيف الوكيل <span>*</span></label>
+                    <select [(ngModel)]="agent.agenceType" name="agenceType" id="Case" class="form-select form-select-lg">
+                        
+                         <option *ngFor="let a of at" 
+                         value="{{a.lokupId}}"
+                         [attr.selected]="agent.agenceType==a.lokupId ? true : null">{{a.lokupValue}}</option> 
+                    </select>
+                    <div class="invalid-feedback"> برجاء اختيار  تصنيف الوكيل</div>
+                </div>
+         
+                <!-- <div class="row" >
+                    <ul class="text-danger">
+                      <li *ngFor="let error of validationErrors"> {{error}} </li>
+                    </ul>
+                  </div> -->
+                <div class="form-group mt-5">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-lg submitBtn form-control"><img
+                                src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات الوكالة</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+   <!-- <h3>form value : {{addAgentForm.value | json}}</h3>
+  <h3>form status : {{addAgentForm.status | json}}</h3>  -->
+
+    </div>
+
+</div>

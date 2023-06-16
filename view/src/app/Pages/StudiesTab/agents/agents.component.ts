@@ -3,6 +3,7 @@ import { Component,TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 import { concat, filter, map, merge } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -11,7 +12,8 @@ import { concat, filter, map, merge } from 'rxjs';
   styleUrls: ['./agents.component.css']
 })
 export class AgentsComponent {
-  title : string = 'القسم الخاص بالوكلات'
+  baseUrl =  environment.apiUrl;
+  title:string = 'القسم الخاص بالوكلات'
   agencies : any;
    modalRef!: BsModalRef ;
    message: string = "";
@@ -41,7 +43,7 @@ export class AgentsComponent {
 
   
    getAgencies(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetAgencies').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetAgencies').subscribe({
       next: response => this.agencies = response,
       error : error => console.log(error),
       complete: () => this.TotalAgencies
@@ -49,7 +51,7 @@ export class AgentsComponent {
    }
 
    getIssuesStatuses(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetIssueStatus').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetIssueStatus').subscribe({
       next: response => this.issuesStatuses= response,
       error: error => console.log(error),
       complete: () => console.log(this.issuesStatuses)
@@ -57,16 +59,17 @@ export class AgentsComponent {
   }
 
   getAgenceType(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetAgenceType').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetAgenceType').subscribe({
       next: response => this.agenceType=response,
       error: error => console.log(error),
       complete: () => console.log("Request Done")
     })
   }
 
+
    
    deleteAgency(id:number) {
-    this.http.delete('https://localhost:5001/api/issuesTab/DeleteAgency/'+id).subscribe({
+    this.http.delete(this.baseUrl+'issuesTab/DeleteAgency/'+id).subscribe({
       next: () =>this.modalRef.hide()  ,
       error : error => {
         this.toastr.error(error.error),

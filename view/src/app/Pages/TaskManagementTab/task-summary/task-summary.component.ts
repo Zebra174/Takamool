@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-task-summary',
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./task-summary.component.css']
 })
 export class TaskSummaryComponent {
-
+  baseUrl =  environment.apiUrl;
   tasks : any;
   issues:any;
  doneTaskStatus:any;
@@ -53,7 +54,7 @@ export class TaskSummaryComponent {
   //  }
   
    getTaskValues(){
-    this.http.get('https://localhost:5001/api/task/GetTaskTableValues').subscribe({
+    this.http.get(this.baseUrl+'task/GetTaskTableValues').subscribe({
       next: response => this.tasks = response,
       error : error => console.log(error),
       complete: () => this.TotalTasks
@@ -61,7 +62,7 @@ export class TaskSummaryComponent {
    }
 
    getIssues(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetIssuesTable').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetIssuesTable').subscribe({
       next: response => this.issues = response,
       error : error => console.log(error),
       complete: () => this.TotalIssues
@@ -69,7 +70,7 @@ export class TaskSummaryComponent {
    }
 
    getDoneTask(){
-    this.http.get('https://localhost:5001/api/task/GetDoneTask').subscribe({
+    this.http.get(this.baseUrl+'task/GetDoneTask').subscribe({
       next: response => this.doneTaskStatus = response,
       error : error => console.log(error),
       complete: () => this.PendingTasks
@@ -78,7 +79,7 @@ export class TaskSummaryComponent {
 
    
    getDoneIssues(){
-    this.http.get('https://localhost:5001/api/issuesTab/GetDoneIssues').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetDoneIssues').subscribe({
       next: response => this.doneIssueStatus = response,
       error : error => console.log(error),
       complete: () => this.PendingIssues

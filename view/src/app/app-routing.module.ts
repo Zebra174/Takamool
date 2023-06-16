@@ -22,6 +22,12 @@ import { SessionsReportComponent } from './Pages/Reports/sessions-report/session
 import { ServicesReportComponent } from './Pages/Reports/services-report/services-report.component';
 import { CustomersReportComponent } from './Pages/Reports/customers-report/customers-report.component';
 import { AddConsultingComponent } from './SubPages/StudiesTab/add-consulting/add-consulting.component';
+import { EditAgencyComponent } from './EditPages/edit-agency/edit-agency.component';
+import { EditIssueComponent } from './EditPages/edit-issue/edit-issue.component';
+import { EditConsultingComponent } from './EditPages/edit-consulting/edit-consulting.component';
+import { EditSessionComponent } from './EditPages/edit-session/edit-session.component';
+import { EditCustomerComponent } from './EditPages/edit-customer/edit-customer.component';
+import { EditUserComponent } from './EditPages/edit-user/edit-user.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -47,6 +53,14 @@ const routes: Routes = [
   {path:'AddConsulting',component:AddConsultingComponent},
   {path:'AddSession',component:AddSessionComponent},
 
+
+
+  {path:'EditAgent/:id',component:EditAgencyComponent},
+  {path:'EditLegalServices/:id',component:EditIssueComponent},
+  {path:'EditConsulting/:id',component:EditConsultingComponent},
+  {path:'EditSession/:id',component:EditSessionComponent},
+  {path:'EditCustomer/:id',component:EditCustomerComponent},
+  {path:'EditUser/:id',component:EditUserComponent},
 
 
   {path:'SessionsReport',component:SessionsReportComponent},

@@ -37,6 +37,12 @@ import { SessionsReportComponent } from './Pages/Reports/sessions-report/session
 import { CustomersReportComponent } from './Pages/Reports/customers-report/customers-report.component';
 import { ServicesReportComponent } from './Pages/Reports/services-report/services-report.component';
 import { AddConsultingComponent } from './SubPages/StudiesTab/add-consulting/add-consulting.component';
+import { EditAgencyComponent } from './EditPages/edit-agency/edit-agency.component';
+import { EditIssueComponent } from './EditPages/edit-issue/edit-issue.component';
+import { EditSessionComponent } from './EditPages/edit-session/edit-session.component';
+import { EditConsultingComponent } from './EditPages/edit-consulting/edit-consulting.component';
+import { EditCustomerComponent } from './EditPages/edit-customer/edit-customer.component';
+import { EditUserComponent } from './EditPages/edit-user/edit-user.component';
 
 
 
@@ -71,6 +77,12 @@ import { AddConsultingComponent } from './SubPages/StudiesTab/add-consulting/add
     CustomersReportComponent,
     ServicesReportComponent,
     AddConsultingComponent,
+    EditAgencyComponent,
+    EditIssueComponent,
+    EditSessionComponent,
+    EditConsultingComponent,
+    EditCustomerComponent,
+    EditUserComponent,
 
   ],
   imports: [

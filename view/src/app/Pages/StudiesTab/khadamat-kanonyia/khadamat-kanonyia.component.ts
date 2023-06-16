@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-khadamat-kanonyia',
@@ -9,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./khadamat-kanonyia.component.css']
 })
 export class KhadamatKanonyiaComponent implements OnInit{
+  baseUrl =  environment.apiUrl;
   searchText:string ="";
   issues:any;
   modalRef!: BsModalRef ;
@@ -24,7 +26,7 @@ export class KhadamatKanonyiaComponent implements OnInit{
    }
    
   getIssues(){
-    this.http.get('https://localhost:5001/api/issuesTab/IssueTable').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/IssueTable').subscribe({
       next: response => this.issues = response,
       error : error => console.log(error),
       complete: () => this.TotalIssues
@@ -34,7 +36,7 @@ export class KhadamatKanonyiaComponent implements OnInit{
     this.modalRef = this.modalService.show(template, {class: 'modal-md'});
    }
    deleteAgency(id:number) {
-    this.http.delete('https://localhost:5001/api/issuesTab/DeleteAgency/'+id).subscribe({
+    this.http.delete(this.baseUrl+'issuesTab/DeleteAgency/'+id).subscribe({
       next: () =>this.modalRef.hide()  ,
       error : error => {
         this.toastr.error(error.error),

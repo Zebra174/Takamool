@@ -47,7 +47,12 @@
                     <td>{{task.projectedStart | date : "longDate"}}</td>
                     <td>{{task.projectedEnd | date:"longDate"}} </td>
                     <td >حالة المهمة <br><span [ngClass]="getStatusesClass(task.taskStatus)" class="badge rounded-pill  statusPill me-2"><p class="text-center mt-2">{{task.lokupValue}}</p> </span></td>
-                    <td>التقدم %<br><span class="badge rounded-pill bg-primary-custom statusPill me-2"><p class="text-center mt-2">{{task.taskProgress}}</p> </span></td>
+                    <td>التقدم %<br>
+                      <div class="progress" style="width: 90%;">
+                        <div class="progress-bar  bg-warning-custom" role="progressbar" [ngStyle]="{'width':task.taskProgress | percent}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <p class="text-center mt-2">{{task.taskProgress | percent}}</p>
+                    </td>
                    
                   </tr>
                 </tbody>

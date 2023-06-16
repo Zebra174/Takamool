@@ -50,6 +50,38 @@ namespace API.Controllers
             return await _context.Customers.AnyAsync(x => x.CustIdNumber== custIdNo);
         }
 
+          [HttpGet("GetCustomer/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> GetCustomer(int id)
+        {
+           var customer = await _context.Customers.FirstOrDefaultAsync(o => o.CustId == id);
+            
+            if(customer == null) return NotFound($"customer with Id = {id} not found");
+             
+            
+            return Ok(customer);
+        }
+
+             [HttpPut("UpdateCustomer/{id}")]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateCustomer(int id ,[FromBody] Customer cust)
+        {
+           var customer = await _context.Customers.FindAsync(id);
+
+            if(customer == null) return NotFound($"customer with Id = {id} not found");
+          
+             customer.CustName = cust.CustName;
+             customer.CustIdNumber = cust.CustIdNumber;
+             customer.CustEmail = cust.CustEmail;
+             customer.CustCity = cust.CustCity;
+             customer.CustAddress = cust.CustAddress;
+             customer.CustMobile = cust.CustMobile;
+
+            await _context.SaveChangesAsync();
+            return Ok(customer);
+        }
+
+
            [HttpDelete("DeleteCustomer/{id}")]
         public async Task<ActionResult> DeleteCustomer(int id)
         {

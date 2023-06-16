@@ -1,0 +1,66 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>إضافة استشارة جديدة</h4>
+
+        <form  #form="ngForm" (ngSubmit)="updateConsulting(consulting.consuultingId)" autocomplete="off">
+            <div class="row">
+
+                <div class="form-group col-6">
+                    <label for="case">اختر نوع الاستشارة<span>*</span></label>
+                   
+                    <select  [(ngModel)]="consulting.constType" name="constType" id="Case" class="form-select form-select-lg">
+                        <option *ngFor="let ct of constTypes" 
+                        value="{{ct.lokupId}}"
+                        [attr.selected]="consulting.constType==ct.lokupId ? true : null"
+                        >{{ct.lokupValue}}</option> 
+                    </select>
+                    <div class="invalid-feedback">برجاء اختيار نوع الاستشارة</div>
+                </div>
+                  
+            
+              
+                <div class="form-group col-6">
+                    <label for="AgenceNo">اسم الاستشارة <span>*</span></label>
+                    <input [(ngModel)]="consulting.constSubject" name="constSubject" type="text" class="form-control  form-control-lg" id="IssueNo"
+                        placeholder="من فضلك ادخل اسم الاستشارة">
+                        <div class="invalid-feedback">برجاء ادخال اسم الاستشارة</div>
+                </div>
+              
+             
+                
+                <div class="form-group col-6">
+                    <label for="case">اختر العميل<span>*</span></label>
+                    <select  [(ngModel)]="consulting.customerId" name="customerId" id="Case" class="form-select form-select-lg">
+                        <option *ngFor="let cust of customers" 
+                        value="{{cust.custId}}"
+                        [attr.selected]="consulting.customerId==cust.custId ? true : null"
+                        >{{cust.custName}}</option> 
+                    </select>
+                    <div class="invalid-feedback"> برجاء اختيار  العميل </div>
+                </div>
+
+             
+                <div class="form-group col-12">
+                    <label for="AgenceNote">ملخص الاستشارة</label>
+                    <textarea  [(ngModel)]="consulting.result" name="result" type="text" class="form-control  form-control-lg" id="QadyiaNumber"
+                        placeholder="من فضلك ادخل ملخص الاستشارة"></textarea>   
+                </div>
+         
+               
+                <div class="form-group mt-5">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-lg submitBtn form-control"><img
+                                src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات الاستشارة</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+   <!-- <h3>form value : {{addAgentForm.value | json}}</h3>
+  <h3>form status : {{addAgentForm.status | json}}</h3>  -->
+
+    </div>
+
+</div>

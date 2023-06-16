@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CreateService {
 
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl =  environment.apiUrl;
 
   constructor(private http : HttpClient) { }
 
@@ -46,6 +47,26 @@ export class CreateService {
   //Settings Tab
   AddUser(model:any){
     return this.http.post(this.baseUrl+'user/AddUser',model);
+  }
+
+  //..............................
+
+
+  //MetFiles
+  AddIssueType(model:any){
+    return this.http.post(this.baseUrl+'user/AddIssueType',model);
+  }
+  AddIssueStatus(model:any){
+    return this.http.post(this.baseUrl+'user/AddIssueStatus',model);
+  }
+  AddContractType(model:any){
+    return this.http.post(this.baseUrl+'user/AddContractType',model);
+  }
+  AddServiceType(model:any){
+    return this.http.post(this.baseUrl+'user/AddServiceType',model);
+  }
+  AddUserRoles(model:any){
+    return this.http.post(this.baseUrl+'user/AddUserRoles',model);
   }
   
   

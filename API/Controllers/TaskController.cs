@@ -77,7 +77,7 @@ namespace API.Controllers
             on a.LokupId equals b.TaskStatus
                    // join k in _context.IsuuesLokupTables on  a.IsuueType equals k.LokupId
                    where a.LokupType == 2
-                   select new { a.LokupValue,b.TaskId,b.TaskStatus,b.Title,b.Description,b.ProjectedStart,b.ProjectedEnd }).ToListAsync();
+                   select new { a.LokupValue,b.TaskId,b.TaskStatus,b.Title,b.Description,b.ProjectedStart,b.ProjectedEnd,b.TaskProgress }).ToListAsync();
             return Ok(tasksStatus);
         }
 

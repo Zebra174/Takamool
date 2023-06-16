@@ -1,0 +1,59 @@
+<div class="box mt-5">
+    <div class="container">
+        <h4>إضافة مستخدم جديد</h4>
+
+        <form  #form="ngForm" (ngSubmit)="updateUser(user.userId)" autocomplete="off">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="case">الصلحية <span>*</span></label>
+                    <select  [(ngModel)]="user.userType" name="isuueNumber"
+                     id="Case" class="form-select form-select-lg">
+                     <option *ngFor="let ur of userRoles" 
+                     value="{{ur.lokupId}}"
+                     [attr.selected]="user.userType==ur.lokupId ? true : null"
+                     >{{ur.lokupValue}}</option> 
+                 </select>
+                   
+                    <div class="invalid-feedback">برجاء اختيار صلحية المستخدم</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="agentNo">اسم المستخدم</label>
+                    <input [(ngModel)]="user.name" name="custName"
+                     type="text" class="form-control  form-control-lg" id="AgentNo" placeholder="من فضلك ادخل اسم المستخدم">
+                     <div class="invalid-feedback">برجاء ادخال اسم المستخدم</div>
+                </div>
+               
+                <div class="form-group col-6">
+                    <label for="agentDeadline">تاريخ الميلاد <span>*</span></label>
+                    <input  [ngModel]="user.dateOfBirth | date:'yyyy-MM-dd'" name="dateOfBirth" (ngModelChange)="user.dateOfBirth=$event"
+                     type="date" class="form-control  form-control-lg" id="agentDeadline" placeholder="يوم/شهر/سنة"
+                        style="background-color: #F5F5F5;">
+                        <div class="invalid-feedback">برجاء تاريخ الميلاد المستخدم</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="qadyiaNumber">البريد الاكتروني</label>
+                    <input [(ngModel)]="user.username" name="username"
+                     type="text" class="form-control  form-control-lg" id="QadyiaNumber" placeholder="من فضلك ادخل البريد الاكتروني">
+                     <div class="invalid-feedback">برجاء ادخال البريد الاكتروني</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="qadyiaNumber">الرقم السري</label>
+                    <input [(ngModel)]="user.pass" name="pass"
+                     type="text" class="form-control  form-control-lg" id="QadyiaNumber" placeholder="من فضلك ادخل رقم السري">
+                     <div class="invalid-feedback">برجاء ادخال الرقم السري</div>
+                </div>
+               
+
+
+                <div class="form-group mt-5">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-lg submitBtn form-control"><img src="/assets/vectors/saveIcon.png" alt="saveIcon"> حفظ بيانات المستخدم</button>
+                    </div>
+        
+            </div>
+
+    </div>
+        </form>
+        <!-- <h3>form value : {{addUserForm.value | json}}</h3>
+  <h3>form status : {{addUserForm.status | json}}</h3> -->
+</div>

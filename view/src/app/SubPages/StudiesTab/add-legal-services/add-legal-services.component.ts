@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CreateService } from 'src/app/_services/create.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-legal-services',
@@ -11,8 +12,9 @@ import { CreateService } from 'src/app/_services/create.service';
   styleUrls: ['./add-legal-services.component.css']
 })
 export class AddLegalServicesComponent implements OnInit {
-
+  baseUrl =  environment.apiUrl;
   issues: any;
+  customers:any;
   contractType:any;
   customerType:any;
   addServiceForm: FormGroup = new FormGroup({});
@@ -28,6 +30,7 @@ export class AddLegalServicesComponent implements OnInit {
     private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.getCustomers();
     this.getContractType();
     this.getCustomerType();
     this.getIssueType();
@@ -75,16 +78,23 @@ export class AddLegalServicesComponent implements OnInit {
   //   })
   // }
 
+  getCustomers(){
+    this.http.get(this.baseUrl+'customer/GetCustomers').subscribe({
+      next: response => this.customers = response,
+      error: error => console.log(error),
+      complete: () => console.log("Request has completed")
+    })
+  }
   
   getIssueType(){
-    this.http.get('https://localhost:5001/api/issuesTab/IssueType').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/IssueType').subscribe({
       next: response => this.issueType = response,
       error: error => console.log(error),
       complete: () => console.log("Request has completed")
     })
   }
   getContractType(){
-    this.http.get('https://localhost:5001/api/issuesTab/ContractType').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/ContractType').subscribe({
       next: response => this.contractType = response,
       error: error => console.log(error),
       complete: () => console.log(this.contractType)
@@ -92,7 +102,7 @@ export class AddLegalServicesComponent implements OnInit {
 
   }
   getCustomerType(){
-    this.http.get('https://localhost:5001/api/issuesTab/CustomerType').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/CustomerType').subscribe({
       next: response => this.customerType = response,
       error: error => console.log(error),
       complete: () => console.log(this.customerType)

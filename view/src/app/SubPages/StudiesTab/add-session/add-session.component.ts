@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CreateService } from 'src/app/_services/create.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-add-session',
@@ -11,6 +12,7 @@ import { CreateService } from 'src/app/_services/create.service';
   styleUrls: ['./add-session.component.css']
 })
 export class AddSessionComponent implements OnInit{
+  baseUrl =  environment.apiUrl;
   issues: any;
   addSessionForm: FormGroup = new FormGroup({});
   choose1: string = 'اختر القضية';
@@ -71,7 +73,7 @@ export class AddSessionComponent implements OnInit{
  
 
   getIssues() {
-    this.http.get('https://localhost:5001/api/issuesTab/GetIssues').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/GetIssues').subscribe({
       next: response => this.issues = response,
       error: error => console.log(error),
       complete: () => console.log("Request has completed")
@@ -79,7 +81,7 @@ export class AddSessionComponent implements OnInit{
   }
 
   getIssueType(){
-    this.http.get('https://localhost:5001/api/issuesTab/IssueType').subscribe({
+    this.http.get(this.baseUrl+'issuesTab/IssueType').subscribe({
       next: response => this.issueType = response,
       error: error => console.log(error),
       complete: () => console.log("Request has completed")
